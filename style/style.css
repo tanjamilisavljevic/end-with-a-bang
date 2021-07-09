@@ -11,14 +11,18 @@ h1 {
     -webkit-text-stroke-color: black;
     animation: 0.2s appearAnimation ease-in;
 }
-/*This media query fixes title on chrome since the stroke width doesn't work properly on it*/
-@media screen and (-webkit-min-device-pixel-ratio:0)
-and (min-resolution:.001dpcm) {
-    h1{-webkit-text-stroke-width:0;
-    -webkit-text-fill-color: black}
-}
 
-#greetingMessage{
+/*This media query doesn't work properly but it supposedly fixes title on chrome ONLY since the stroke width doesn't work properly on it*/
+/*@media screen and (-webkit-min-device-pixel-ratio: 0)*/
+/*and (min-resolution: .001dpcm) {*/
+/*    h1 {*/
+/*        -webkit-text-stroke-width: 0;*/
+/*        -webkit-text-fill-color: black*/
+/*    }*/
+/*}*/
+
+
+#greetingMessage {
     font-family: 'Fira Sans', sans-serif;
     color: black;
     margin-top: 1em;
@@ -56,7 +60,8 @@ and (min-resolution:.001dpcm) {
     text-align: center;
     box-shadow: #FFEBE7 5px 5px 20px;
 }
-.levelLink:hover{
+
+.levelLink:hover {
     color: #FFC0BE;
     background-color: black;
 
@@ -83,11 +88,49 @@ footer {
     margin: 1em;
     color: #FFEBE7;
 }
+
 @keyframes appearAnimation {
     from {
         opacity: 0
     }
     to {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    .levelLink {
+        padding: 0.3em;
+        min-width: 10em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .levelLink {
+        padding: 0.3em;
+        min-width: 8em;
+        margin: 1em;
+    }
+
+    .copyright {
+        font-size: small;
+    }
+
+    .thanks {
+        font-size: small;
     }
 }
