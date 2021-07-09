@@ -56,6 +56,11 @@ and (min-resolution:.001dpcm) {
     text-align: center;
     box-shadow: #FFEBE7 5px 5px 20px;
 }
+.levelLink:hover{
+    color: #FFC0BE;
+    background-color: black;
+
+}
 
 footer {
     display: grid;
