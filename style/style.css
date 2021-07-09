@@ -1,0 +1,88 @@
+body {
+    background-color: #7F95D1;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Tourney', cursive;
+    font-size: 6em;
+    -webkit-text-fill-color: #FFEBE7;
+    -webkit-text-stroke-width: 0.015em;
+    -webkit-text-stroke-color: black;
+    animation: 0.2s appearAnimation ease-in;
+}
+/*This media query fixes title on chrome since the stroke width doesn't work properly on it*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+and (min-resolution:.001dpcm) {
+    h1{-webkit-text-stroke-width:0;
+    -webkit-text-fill-color: black}
+}
+
+#greetingMessage{
+    font-family: 'Fira Sans', sans-serif;
+    color: black;
+    margin-top: 1em;
+}
+
+.innerBodyWrapper {
+    /*display:none;*/
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-height: calc(100vh - 55px);
+}
+
+.levelsWrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    opacity: 0;
+    animation: 0.2s appearAnimation ease-in;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.levelLink {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Fira Sans', sans-serif;
+    color: black;
+    margin: 1.5em;
+    background-color: #FFC0BE;
+    border: solid black 1px;
+    border-radius: 16px;
+    padding: 0.5em;
+    min-width: 15em;
+    text-align: center;
+    box-shadow: #FFEBE7 5px 5px 20px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-top: 1px solid #FFEBE7;
+    max-width: 100vw;
+    background-color: black;
+}
+
+.copyright {
+    justify-self: start;
+    font-family: 'Fira Sans', sans-serif;
+    margin: 1em;
+    color: #FFEBE7;
+}
+
+.thanks {
+    justify-self: end;
+    font-family: 'Fira Sans', sans-serif;
+    margin: 1em;
+    color: #FFEBE7;
+}
+@keyframes appearAnimation {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
