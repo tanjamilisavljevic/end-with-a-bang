@@ -44,4 +44,9 @@ function jump(){
         jumpCount++ ;
     }, 10);
 }
+
+function score () {
+    let score = document.querySelector(".score"); 
+    // add innerHTML after break. display counter, which is the score (see console log above)
+}
 	
