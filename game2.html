@@ -5,14 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flappy Bert</title>
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="game2.css">
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="entergame">
+        <button class="btn-entergame"><h3>Are you ready?</h3></button>
+    </div>
+    <div class="playagain" id="playagain">
+        <button class="btn-playagain"><h3>Want to try again?</h3></button>
+    </div>
+    <div id="title">
+        <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
+    </div>
+    <div class="score-container">
+        <div class="score"></div>
+    </div>
     <div id="game">
         <div id="pipe"></div>
         <div id="hole"></div>
-        <div id="bert"></div>
+        <div id="bert"><img src="img/flappyBert2(nb).png" alt="flappy Bert" width="100px" height="100px"></div>
     </div>
-    <script src="script/scriptLevel2.js"></script> 
+    <script src="script/scriptLevel2.js"></script>
 </body>
 </html>

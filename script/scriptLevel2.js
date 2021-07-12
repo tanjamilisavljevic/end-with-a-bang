@@ -1,33 +1,44 @@
+document.querySelector(".btn-entergame").addEventListener("click", function(){
 
-/*  //  5 SECOND COUNTDOWN
+    let enterScreen = document.querySelector(".entergame");
+
+    enterScreen.style.opacity = "0.9";
+    setTimeout(() =>{ enterScreen.style.opacity = "0.7";}, 200);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.6";}, 300);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.5";}, 400);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.4";}, 500);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.2";}, 600);
+    setTimeout(() =>{ enterScreen.style.opacity = "0.1";}, 700);
+    setTimeout(() =>{ enterScreen.style.opacity = "0";}, 800);
+    setTimeout(() =>{ enterScreen.remove()}, 1000);
+
+      //  5 SECOND COUNTDOWN
     
-startgame = () => {
+    var timeLeft = 3;
+    var elem = document.getElementById('startGame');
 
-    var timeleft = 5;
-    var downloadTimer = setInterval(function(){
-    if(timeleft <= 0){
-        clearInterval(downloadTimer);
-    }
-    document.getElementById("progressBar").value = 5 - timeleft;
-    timeleft -= 1;
-    }, 1000);
-    <progress value="0" max="5" id="progressBar"></progress>
-    */
+    var timerId = setInterval(countdown, 1000);
 
+    function countdown() {
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            doSomething();
+        } else {
+            elem.innerHTML = timeLeft;
+            timeLeft--;
+        }
+    };
 
-
-// start game when pressing start
+    // start game when pressing start
 
 // restart game when pressing restart ( when you lost)
 
 // continuing with level 3 when beating level 2
-
 let pipe = document.getElementById("pipe");
 let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
-
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let random = -((Math.random()*300)+150);
@@ -36,7 +47,6 @@ hole.addEventListener('animationiteration', () => {
     console.log(random)
     console.log(counter)
 });
-
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
@@ -71,5 +81,31 @@ function jump(){
     }, 10);
 }
 
-restart
+function score () {
+    let score = document.querySelector(".score"); 
+    // add innerHTML after break. display counter, which is the score (see console log above)
+}
+
+// Play again page
+let matchScreen = document.querySelector(".match");
+let playAgainScreen = document.querySelector(".playagain");
+
+function playAgain(){
+
+    setTimeout(() =>{ playAgainScreen.style.display = 'block'; }, 3500 );
+
+    document.querySelector(".btn-playagain").addEventListener("click", function(){
+
+        //playagain btn fade out slowly after click
+        playAgainScreen.style.opacity = "0.7";
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 100);
+        setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 200);
+        setTimeout(() =>{ playAgainScreen.style.display = "none";}, 300);
+        setTimeout(() =>{ location.reload();},400);
+
+    });
+    
+};
+
+});  
 	
