@@ -3,11 +3,14 @@ let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
+
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
+    let score = document.querySelector(".score-container"); 
     let random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
+    score.innerHTML = "SCORE : " + counter;
     console.log(random)
     console.log(counter)
 });
@@ -45,8 +48,5 @@ function jump(){
     }, 10);
 }
 
-function score () {
-    let score = document.querySelector(".score"); 
-    // add innerHTML after break. display counter, which is the score (see console log above)
-}
+
 	
