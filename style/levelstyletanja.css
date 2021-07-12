@@ -1,44 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* PAGE STYLING */
+body {
+    background-color: #7F95D1;
+}
 h1 {
     text-align: center;
-    margin-bottom: 2em;
+    font-family: 'Tourney', cursive;
+    font-size: 6em;
+    -webkit-text-fill-color: #FFEBE7;
+    -webkit-text-stroke-width: 0.015em;
+    -webkit-text-stroke-color: black;
+    margin: 0;
 }
 
+/* IN GAME ELEMENT STYLING */
 #game {
-    overflow: hidden;
-    width: 60vw;
-    height: 70vh;
-    border: 1px solid black;
-    margin: auto;
+    /* Center */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -220px; /* Half of height*/
+    margin-left: -350px; /* Half of width */
+    /* Screen size game */
+    width: 700px;
+    height: 500px;
+    border: 1px solid #FFC0BE;
+    overflow: hidden; /*Pipe doesn't exceed game screen*/
+    background-color: #FFEBE7;
+    box-shadow:#FFEBE7 5px 5px 20px;
 }
 
 #pipe {
-    width: 10vw;
-    height: 70vh;
+    width: 50px;
+    height: 500px;
     background-color: #FF82A9;
     position: relative;
-    left: 60vw;
-    animation: pipe 1.5s infinite linear;
-}
-@keyframes pipe{
-    from {left: 60vw}
-    to {left: -10vw}
+    left: 650px;
+    animation: block 2s infinite linear;
 }
 
-#hole{
-    width: 10vw;
-    height: 10vh;
-    background-color: white;
+@keyframes  block {
+    0% {left:500px;}
+    100% {left:-100px;}
+}
+
+#hole {
+    width: 50px;
+    height: 150px;
+    background-color: #FFEBE7;
     position: relative;
-    left: 60vw;
-    top: -70vh;
-    animation: pipe 1.5s infinite linear;
+    left: 650px;
+    top: -500px;
+    animation: block 2s infinite linear;
 }
 
-#bert{
+#bert {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-color: #7F95D1;
+    top: 100px;
     border-radius: 50%;
-    top: 30vh;
 }
+
+img {
+    border-radius: 50px;
+}
+
