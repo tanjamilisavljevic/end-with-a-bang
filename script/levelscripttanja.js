@@ -15,10 +15,25 @@ hole.addEventListener("animationiteration",  () => {
 // Gravity
 setInterval(function() {
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-        if (jumping === 0) { // Gravity
-            bert.style.top = (bertTop + 4) + "px";
+        if (jumping === 0) {
+            bert.style.top = (bertTop + 3) + "px";
         }
     }
 , 10)
 
+jump = () => {
+    jumping = 1;
+    let jumpCount = 0;
+    let jumpInterval = setInterval(function (){
+        let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
+        bert.style.top = (bertTop - 5) + "px";
+        if (jumpCount > 15){
+            clearInterval(jumpInterval);
+            jumping = 0;
+            jumpCount = 0;
+        }
+    jumpCount++
+    }, 10);
+
+}
 
