@@ -39,7 +39,7 @@ h1 {
     position: relative;
     left: 650px;
     animation: block 2s infinite linear;
-} 
+}   
 
 @keyframes  block {
     0% {left:800px;}
@@ -59,9 +59,12 @@ h1 {
 #bert {
     width: 20px;
     height: 20px;
-    background-color: red;
     position: absolute;
     top: 100px;
     border-radius: 50%;
+}
+
+img {
+    border-radius: 50px;
 }
 
