@@ -97,6 +97,7 @@ footer {
     position: relative;
     text-align: center;
 }
+
 .animate > span:nth-child(even) {
     animation: animateBackwards 1s ease-in-out forwards;
 }
@@ -115,6 +116,7 @@ footer {
         transform: rotate(18deg);
     }
 }
+
 @keyframes animateForwards {
     from {
         top: 0;
@@ -125,12 +127,6 @@ footer {
         transform: rotate(-15deg);
     }
 }
-
-
-
-
-
-
 
 @keyframes appearAnimation {
     from {
