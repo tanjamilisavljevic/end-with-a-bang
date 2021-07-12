@@ -10,6 +10,7 @@ h1 {
     -webkit-text-stroke-width: 0.015em;
     -webkit-text-stroke-color: black;
     animation: 0.2s appearAnimation ease-in;
+    margin: 0;
 }
 
 /*This media query doesn't work properly but it supposedly fixes title on chrome ONLY since the stroke width doesn't work properly on it*/
@@ -44,6 +45,7 @@ h1 {
     animation: 0.2s appearAnimation ease-in;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
+    margin-top: 2em;
 }
 
 .levelLink {
@@ -51,7 +53,7 @@ h1 {
     cursor: pointer;
     font-family: 'Fira Sans', sans-serif;
     color: black;
-    margin: 1.5em;
+    margin: 1.2em;
     background-color: #FFC0BE;
     border: solid black 1px;
     border-radius: 16px;
@@ -88,6 +90,47 @@ footer {
     margin: 1em;
     color: #FFEBE7;
 }
+
+
+.animate span {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+.animate > span:nth-child(even) {
+    animation: animateBackwards 1s ease-in-out forwards;
+}
+
+.animate > span:nth-child(odd) {
+    animation: animateForwards 1s ease-in-out forwards;
+}
+
+@keyframes animateBackwards {
+    from {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 0.4em;
+        transform: rotate(18deg);
+    }
+}
+@keyframes animateForwards {
+    from {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    to {
+        top: .6em;
+        transform: rotate(-15deg);
+    }
+}
+
+
+
+
+
+
 
 @keyframes appearAnimation {
     from {

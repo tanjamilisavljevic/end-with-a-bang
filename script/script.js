@@ -16,5 +16,21 @@ greetPlayer = () => {
 greetPlayer();
 
 
+window.addEventListener("load", function(){
+    const delay = 2;
+    const allElementsWithAnimateClass = document.querySelectorAll
+    (".animate");
+    for(let i=0; i < allElementsWithAnimateClass.length; i++){
+        const words = allElementsWithAnimateClass[i].innerText.split(" ");
+        allElementsWithAnimateClass[i].innerHTML = "";
 
+        for(let i2=0; i2 < words.length; i2++){
+            const item = document.createElement("span");
+            item.innerText = words[i2];
+            const calculation = (delay+((allElementsWithAnimateClass.length + i2)/3));
+            item.style.animationDelay = calculation+"s";
+            allElementsWithAnimateClass[i].appendChild(item);
+        }
+    }
+});
 
