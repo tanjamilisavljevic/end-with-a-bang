@@ -1,11 +1,22 @@
-// start game when pressing start
 
-play = () => {
-    move = () => {
+/*  //  5 SECOND COUNTDOWN
+    
+startgame = () => {
 
+    var timeleft = 5;
+    var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+        clearInterval(downloadTimer);
     }
+    document.getElementById("progressBar").value = 5 - timeleft;
+    timeleft -= 1;
+    }, 1000);
+    <progress value="0" max="5" id="progressBar"></progress>
+    */
 
-}
+
+
+// start game when pressing start
 
 // restart game when pressing restart ( when you lost)
 
@@ -16,6 +27,7 @@ let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
+
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let random = -((Math.random()*300)+150);
@@ -24,6 +36,7 @@ hole.addEventListener('animationiteration', () => {
     console.log(random)
     console.log(counter)
 });
+
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
@@ -57,4 +70,6 @@ function jump(){
         jumpCount++ ;
     }, 10);
 }
+
+restart
 	
