@@ -10,6 +10,7 @@ hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container");
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
+    score.classList.add('score-container-extra');
     counter++;
     //highcounter++;
     score.innerHTML = "SCORE : " + counter;

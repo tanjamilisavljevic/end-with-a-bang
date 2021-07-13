@@ -4,7 +4,8 @@
 }
 /* PAGE STYLING */
 body {
-    background-color: #a2b0d7;
+    background-image: url("../img/bluesky.png");
+
 }
 
 h1 {
@@ -27,8 +28,8 @@ h1 {
     height: 800px;
     border: 1px solid pink;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
-    background-image: url("../img/skytest.png");
-    background-size: cover;
+    background-color: #FFC0BE;
+    box-shadow: 0px 2px 30px 12px #FFEBE7;
 }
 
 #pipe {
@@ -37,7 +38,6 @@ h1 {
     position: relative;
     left: 650px;
     animation: block 1.5s infinite linear;
-
 }
 /*#sun{*/
 /*    position: relative;*/
@@ -59,9 +59,6 @@ h1 {
     animation: block 1.5s infinite linear;
 }
 
-.transparent{
-    width: 50px;
-}
 
 #bert {
     width: 20px;
@@ -76,9 +73,9 @@ h1 {
     height: 100px;
     background-color: pink;
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 img {
     border-radius: 50%;
@@ -118,10 +115,10 @@ html, body {
     animation: animate 150ms linear infinite;
 }
 
-.score-container{
+.score-container-extra{
     display: flex;
     max-width: 200px;
-    border: solid #7F95D1 1px;
+    border: solid #FFC0BE 1px;
     border-left: none;
     color: black;
     font-weight: bolder;
@@ -129,15 +126,19 @@ html, body {
     margin: 1em;
     margin-left: 0;
     padding: 1em;
+    font-family: 'Press Start 2P', cursive;
 }
 .wrapper{
     min-height: calc(100vh - 55px);
 }
+.titleWrapper{
+    background-color: #FFEBE7;
+    border: solid #7F95D1 1px;
+    max-width: 20vw;
+}
 #game-title{
-    display: flex;
-    justify-content: flex-end;
     font-size: 1em;
-    margin-right: 2em;
+    margin-left: 2em;
     max-width: 100vw;
 }
 
