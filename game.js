@@ -3,6 +3,7 @@ let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
+//let highcounter = 0;
 
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
@@ -10,9 +11,12 @@ hole.addEventListener('animationiteration', () => {
     let random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
+    //highcounter++;
     score.innerHTML = "SCORE : " + counter;
+    //highcounter.innerHTML = "HIGHSCORE : " + highcounter;
     console.log(random)
     console.log(counter)
+    //console.log(highcounter)
 });
 // Gravity 
 setInterval(function() {
@@ -26,7 +30,8 @@ setInterval(function() {
     if(( bertTop > 780 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
         console.log("You suck . Score " + counter);
         bert.style.top = 100 + "px";
-        counter = 0; 
+        counter = 0;
+        //highcounter = 0; 
     }
 
 }, 10);
@@ -48,7 +53,12 @@ function jump(){
     }, 10);
 }
 
-// Fix Game Over principle when touching bottom, character respawns on top now. 
+
+// MORNING : Check with Fam for structure and Correct levels before proceeding
+// MORNING : Pull and Push sesh before proceeding
+// FOCUS : revise spawn logic pipes, create better loop including individual loops ! 
+// Fix "Game Over" principle when touching bottom, character respawns on top now. 
 // Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
 // Put each score in array per level, add plus operator per round => result is Highscore
+
 	
