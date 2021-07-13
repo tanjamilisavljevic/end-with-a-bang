@@ -56,7 +56,6 @@ function jump(){
 
 // MORNING : Check with Fam for structure and Correct levels before proceeding
 // MORNING : Pull and Push sesh before proceeding
-// FOCUS : revise spawn logic pipes, create better loop including individual loops ! 
 // Fix "Game Over" principle when touching bottom, character respawns on top now. 
 // Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
 // Put each score in array per level, add plus operator per round => result is Highscore
