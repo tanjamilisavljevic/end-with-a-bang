@@ -1,30 +1,39 @@
-const pipe = document.getElementById("pipe");
-const hole = document.getElementById("hole");
-const bert = document.getElementById("bert");
+let pipe = document.getElementById("pipe");
+let hole = document.getElementById("hole");
+let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
+//let highcounter = 0;
+
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
-    const random = -((Math.random()*300)+150);
+    let score = document.querySelector(".score-container");
+    let random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
+    //highcounter++;
+    score.innerHTML = "SCORE : " + counter;
+    //highcounter.innerHTML = "HIGHSCORE : " + highcounter;
     console.log(random)
     console.log(counter)
+    //console.log(highcounter)
 });
 // Gravity
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-    if (jumping === 0) { // Gravity
+    if (jumping == 0) { // Gravity
         bert.style.top = ( bertTop + 6 ) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-    let cTop = -(500 - bertTop);
-    if(( bertTop > 480 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 100 )))) {
+    var cTop = -(800 - bertTop);
+    if(( bertTop > 780 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
         console.log("You suck . Score " + counter);
         bert.style.top = 100 + "px";
         counter = 0;
+        //highcounter = 0;
     }
+
 }, 10);
 
 function jump(){
@@ -42,9 +51,4 @@ function jump(){
         }
         jumpCount++ ;
     }, 10);
-}
-
-function score () {
-    let score = document.querySelector(".score");
-    // add innerHTML after break. display counter, which is the score (see console log above)
 }

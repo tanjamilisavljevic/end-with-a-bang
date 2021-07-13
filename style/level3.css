@@ -6,6 +6,7 @@
 body {
     background-color: #7F95D1;
 }
+
 h1 {
     text-align: center;
     font-family: 'Tourney', cursive;
@@ -22,35 +23,33 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -220px; /* Half of height*/
+    margin-top: -400px; /* Half of height*/
     margin-left: -350px; /* Half of width */
     /* Screen size game */
     width: 700px;
-    height: 500px;
-    border: 1px solid #FFC0BE;
+    height: 800px;
+    border: 1px solid pink;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
-    background-color: #FFEBE7;
-    box-shadow:#FFEBE7 5px 5px 20px;
 }
 
 #pipe {
     width: 50px;
-    height: 500px;
-    background-color: #FF82A9;
+    height: 800px;
+    background-color: green;
     position: relative;
     left: 650px;
     animation: block 2s infinite linear;
 }
 
 @keyframes  block {
-    0% {left:500px;}
+    0% {left:800px;}
     100% {left:-100px;}
 }
 
 #hole {
     width: 50px;
     height: 150px;
-    background-color: #FFEBE7;
+    background-color: #7F95D1;
     position: relative;
     left: 650px;
     top: -500px;
@@ -58,12 +57,53 @@ h1 {
 }
 
 #bert {
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: 100px;
     border-radius: 50%;
 }
 
+#floor {
+    width: 700px;
+    height: 100px;
+    background-color: pink;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%)
+}
 img {
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
+/* Loop Floor */
+@keyframes animate {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -60px 0;
+    }
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+#floor {
+    width: 100%;
+    height: 14%;
+    position: absolute;
+    background-image: url("img/base.png");
+    /*background-size: 60px 60px 60px 60px;*/
+    animation: animate 210ms linear infinite;
+}
