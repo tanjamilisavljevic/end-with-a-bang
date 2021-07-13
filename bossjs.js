@@ -4,18 +4,6 @@ let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
 
-
-// Spawn Pipes
-hole.addEventListener('animationiteration', () => {
-    let score = document.querySelector(".score-container"); 
-    let random = -((Math.random() * 317) + 383);
-    hole.style.top = random  + "px";
-    counter++;
-    score.innerHTML = "SCORE : " + counter;
-    //console.log(random)
-    //console.log(counter)
-});
-// Create localStorage - get Highscore
 const counterUp = () => {
     if ( typeof( Storage ) !== "undefined") {
         if ( localStorage.counter ) {
@@ -27,6 +15,24 @@ const counterUp = () => {
         }
     }
 }
+const resetStorage = () => {
+    
+    //clear storage key
+    localStorage.removeItem("count");
+}
+// Spawn Pipes
+hole.addEventListener('animationiteration', () => {
+    let score = document.querySelector(".score-container"); 
+    let random = -((Math.random() * 317) + 383);
+    hole.style.top = random  + "px";
+    counter++;
+    counterUp();// add counter to localStorage
+    score.innerHTML = "SCORE : " + counter;
+    //console.log(random)
+    //console.log(counter)
+});
+// Create localStorage - get Highscore
+
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
@@ -43,7 +49,7 @@ setInterval(function() {
         counter = 0; //reset counter after you lose
         bert.style.top = 100 + "px"; // reset character
     }
-
+    resetStorage();
 }, 10);
 
 function jump(){
