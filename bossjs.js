@@ -15,7 +15,6 @@ const counterUp = () => {
     }
 }
 
-
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container"); 
@@ -43,6 +42,10 @@ setInterval(function() {
     if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
         alert("You suck . Score " + counter);
         counter = 0; //reset counter after you lose
+        const resetStorage = () => {
+            localStorage.removeItem("counter");
+        }
+        resetStorage();
         bert.style.top = 100 + "px"; // reset character
     }
 }, 10);
