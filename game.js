@@ -23,12 +23,12 @@ setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
     let bertBottom = parseInt(window.getComputedStyle(bert).getPropertyValue("bottom"));
     if (jumping == 0) { // Gravity
-        bert.style.top = ( bertTop + 6 ) + "px";
+        bert.style.top = ( bertTop + 6 ) + "px"; // pushed bert 6 px down when not clicked => gravity
         bert.style.bottom = ( bertBottom + 100) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-    var cTop = -(800 - bertTop);
+    let cTop = -(800 - bertTop);
     if(( bertTop > 780 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
         console.log("You suck . Score " + counter);
         bert.style.top = 100 + "px";
