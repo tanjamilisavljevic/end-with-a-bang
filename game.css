@@ -1,109 +1,107 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 } 
 /* PAGE STYLING */
 body {
-    background-color: #7F95D1;
+  background-color: #7F95D1;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Tourney', cursive;
-    font-size: 6em;
-    -webkit-text-fill-color: #FFEBE7;
-    -webkit-text-stroke-width: 0.015em;
-    -webkit-text-stroke-color: black;
-    margin: 0;
+  text-align: center;
+  font-family: 'Tourney', cursive;
+  font-size: 6em;
+  -webkit-text-fill-color: #FFEBE7;
+  -webkit-text-stroke-width: 0.015em;
+  -webkit-text-stroke-color: black;
+  margin: 0;
 }
 
 /* IN GAME ELEMENT STYLING */
 #game {
-    /* Center */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -400px; /* Half of height*/
-    margin-left: -350px; /* Half of width */
-    /* Screen size game */
-    width: 700px;
-    height: 800px;
-    border: 1px solid pink;
-    overflow: hidden; /*Pipe doesn't exceed game screen*/
+  /* Center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -400px; /* Half of height*/
+  margin-left: -350px; /* Half of width */
+  /* Screen size game */
+  width: 700px;
+  height: 800px;
+  border: 1px solid pink;
+  overflow: hidden; /*Pipe doesn't exceed game screen*/
 }
 
 #pipe {
-    width: 50px;
-    height: 800px;
-    background-color: green;
-    position: relative;
-    left: 650px;
-    animation: block 2s infinite linear;
+  width: 50px;
+  height: 800px;
+  background-color: green;
+  position: relative;
+  left: 800px;
+  animation: block 2s infinite linear;
 }   
 
 @keyframes  block {
-    0% {left:800px;}
-    100% {left:-100px;}
+  0% {left:800px;}
+  100% {left:-50px;}
 }
 
 #hole {
-    width: 50px;
-    height: 150px;
-    background-color: #7F95D1;
-    position: relative;
-    left: 650px;
-    top: -500px;
-    animation: block 2s infinite linear;
+  width: 50px;
+  height: 180px;
+  background-color: #7F95D1;
+  position: relative;
+  left: 700px;
+  top: -800px;
+  animation: block 2s infinite linear;
 }
 
 #bert {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 100px;
-    border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  border-radius: 50%;
 }
 
 #floor {
-    width: 700px;
-    height: 100px;
-    background-color: pink;
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translateX(-50%)
+  width: 700px;
+  height: 100px;
+  background-color: pink;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%)
 }
 img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* Loop Floor */
 @keyframes animate {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -60px 0;
-    }
+  from {
+    background-position: 0 0;
   }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+  to {
+    background-position: -60px 0;
   }
-  
-  html, body {
-    height: 100%;
-    min-height: 100%;
-    overflow: hidden;
-  }
-  
-  #floor {
-    width: 100%;
-    height: 14%;
-    position: absolute;
-    background-image: url("img/base.png");
-    /*background-size: 60px 60px 60px 60px;*/
-    animation: animate 210ms linear infinite;
-  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+#floor {
+  width: 100%;
+  height: 14%;
+  position: absolute;
+  background-image: url("img/base.png");
+  /*background-size: 60px 60px 60px 60px;*/
+  animation: animate 210ms linear infinite;
+}
