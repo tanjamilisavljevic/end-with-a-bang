@@ -23,15 +23,15 @@ setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
     let bertBottom = parseInt(window.getComputedStyle(bert).getPropertyValue("bottom"));
     if (jumping == 0) { // Gravity
-        bert.style.top = ( bertTop + 6 ) + "px"; // pushed bert 6 px down when not clicked => gravity
+        bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
         bert.style.bottom = ( bertBottom + 100) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(800 - bertTop);
-    if(( bertTop > 780 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
-        console.log("You suck . Score " + counter);
-        bert.style.top = 100 + "px";
+    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
+        alert("You suck . Score " + counter);
+        bert.style.top = 100 + "px"; // reset character
         counter = 0;
         //highcounter = 0; 
     }
@@ -43,13 +43,13 @@ function jump(){
     let jumpCount = 0;
     let jumpInterval = setInterval(function(){
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-        if (( bertTop > 12 ) && ( jumpCount < 30 )) {
-            bert.style.top = ( bertTop - 5 ) + "px" ;
+        if (( bertTop > 6 ) && ( jumpCount < 15 )) { // change count for harder or easier gravity response
+            bert.style.top = ( bertTop - 4 ) + "px" ;
         }
         if ( jumpCount > 20 ) {
             clearInterval( jumpInterval );
             jumping = 0 ;
-            jumpCount = 0 ;
+            jumpCount = 0 
         }
         jumpCount++ ;
     }, 10);
