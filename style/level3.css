@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* PAGE STYLING */
+body {
+    background-color: #a2b0d7;
+}
+
+h1 {
+    font-family: 'Tourney', cursive;
+    -webkit-text-fill-color: #FFEBE7;
+    -webkit-text-stroke-width: 0.015em;
+    -webkit-text-stroke-color: black;
+}
+
+/* IN GAME ELEMENT STYLING */
+#game {
+    /* Center */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px; /* Half of height*/
+    margin-left: -350px; /* Half of width */
+    /* Screen size game */
+    width: 700px;
+    height: 800px;
+    border: 1px solid pink;
+    overflow: hidden; /*Pipe doesn't exceed game screen*/
+    background-image: url("../img/skytest.png");
+    background-size: cover;
+}
+
+#pipe {
+    width: 50px;
+    height: 800px;
+    position: relative;
+    left: 650px;
+    animation: block 1.5s infinite linear;
+
+}
+/*#sun{*/
+/*    position: relative;*/
+/*    animation: block 1.5s infinite linear;*/
+/*}*/
+
+@keyframes  block {
+    0% {left:800px;}
+    100% {left:-100px;}
+}
+
+#hole {
+    width: 50px;
+    height: 150px;
+    background-color: #FFC0BE;
+    position: relative;
+    left: 650px;
+    top: -500px;
+    animation: block 1.5s infinite linear;
+}
+
+.transparent{
+    width: 50px;
+}
+
+#bert {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 100px;
+    border-radius: 50%;
+}
+
+#floor {
+    width: 700px;
+    height: 100px;
+    background-color: pink;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+img {
+    border-radius: 50%;
+}
+.stone{
+    width: 50px;
+    border-radius: 0;
+}
+/* Loop Floor */
+@keyframes animate {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -60px 0;
+    }
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+#floor {
+    width: 100%;
+    height: 14%;
+    position: absolute;
+    background-image: url("../img/grass.png");
+    /*background-size: 60px 60px 60px 60px;*/
+    animation: animate 150ms linear infinite;
+}
+
+.score-container{
+    display: flex;
+    max-width: 200px;
+    border: solid #7F95D1 1px;
+    border-left: none;
+    color: black;
+    font-weight: bolder;
+    background-color: #7F95D1;
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em;
+}
+.wrapper{
+    min-height: calc(100vh - 55px);
+}
+#game-title{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1em;
+    margin-right: 2em;
+    max-width: 100vw;
+}
+
+/*TODO: make hole transparent - z index*/
