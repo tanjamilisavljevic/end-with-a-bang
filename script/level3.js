@@ -1,14 +1,14 @@
-const pipe = document.getElementById("pipe");
-const hole = document.getElementById("hole");
-const bert = document.getElementById("bert");
+let pipe = document.getElementById("pipe");
+let hole = document.getElementById("hole");
+let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
 //let highcounter = 0;
 
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
-    const score = document.querySelector(".score-container");
-    const random = -((Math.random() * 317) + 383);
+    let score = document.querySelector(".score-container");
+    let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
     counter++;
     //highcounter++;
@@ -22,11 +22,11 @@ hole.addEventListener('animationiteration', () => {
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
 
-    if (jumping === 0) { // Gravity
-        bert.style.top = ( bertTop + 4 ) + "px"; // pushed bert 6 px down when not clicked => gravity
+    if (jumping == 0) { // Gravity
+        bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
     }
-    const pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
-    const holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+    let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
+    let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
 
     if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
