@@ -8,8 +8,8 @@ let counter = 0;
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container"); 
-    let random = -((Math.random()*300)+150);
-    hole.style.top = random + "px";
+    let random = -((Math.random() * 317) + 383);
+    hole.style.top = random  + "px";
     counter++;
     //highcounter++;
     score.innerHTML = "SCORE : " + counter;
@@ -21,8 +21,10 @@ hole.addEventListener('animationiteration', () => {
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
+    let bertBottom = parseInt(window.getComputedStyle(bert).getPropertyValue("bottom"));
     if (jumping == 0) { // Gravity
         bert.style.top = ( bertTop + 6 ) + "px";
+        bert.style.bottom = ( bertBottom + 100) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
@@ -54,10 +56,9 @@ function jump(){
 }
 
 
-// MORNING : Check with Fam for structure and Correct levels before proceeding
-// MORNING : Pull and Push sesh before proceeding
 // Fix "Game Over" principle when touching bottom, character respawns on top now. 
 // Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
-// Put each score in array per level, add plus operator per round => result is Highscore
+// Put each score in array per level, add plus operator per round => result is Highscore localStorage  !
+
 
 	
