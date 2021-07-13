@@ -30,15 +30,18 @@ h1 {
     height: 800px;
     border: 1px solid pink;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
+    background-image: url("../img/skytest.png");
+    background-size: cover;
 }
 
 #pipe {
     width: 50px;
     height: 800px;
-    background-color: green;
+    background-color: darkseagreen;
+    border: solid #32502b 4px;
     position: relative;
     left: 650px;
-    animation: block 1.3s infinite linear;
+    animation: block 1.5s infinite linear;
 }
 
 @keyframes  block {
@@ -49,11 +52,13 @@ h1 {
 #hole {
     width: 50px;
     height: 150px;
-    background-color: #7F95D1;
+    background-color: #FFC0BE;
     position: relative;
     left: 650px;
     top: -500px;
-    animation: block 1.3s infinite linear;
+    animation: block 1.5s infinite linear;
+    border-top: solid #32502b 2px;
+    border-bottom: solid #32502b 2px;
 }
 
 #bert {
@@ -103,7 +108,23 @@ html, body {
     width: 100%;
     height: 14%;
     position: absolute;
-    background-image: url("img/base.png");
+    background-image: url("../img/grass.png");
     /*background-size: 60px 60px 60px 60px;*/
-    animation: animate 130ms linear infinite;
+    animation: animate 150ms linear infinite;
+}
+
+.score-container{
+    display: flex;
+    max-width: 200px;
+    border: solid #FFEBE7 1px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    color: #44568b;
+    background-color: #bbc1d2;
+    margin: 1em;
+    margin-left: 0;
+    box-shadow: white 5px 5px 20px;
+    padding: 1em;
+
+
 }
