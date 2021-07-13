@@ -29,7 +29,7 @@ setInterval(function() {
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
 
-    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) { //3 dif statements if all true = game over
+    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
         alert("You suck . Score " + counter);
         bert.style.top = 100 + "px"; // reset character
         counter = 0; //reset counter after you lose
