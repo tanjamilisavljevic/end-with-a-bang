@@ -3,7 +3,6 @@ let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
-//let highcounter = 0;
 
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
@@ -16,7 +15,6 @@ hole.addEventListener('animationiteration', () => {
     //highcounter.innerHTML = "HIGHSCORE : " + highcounter;
     console.log(random)
     console.log(counter)
-    //console.log(highcounter)
 });
 // Gravity 
 setInterval(function() {
@@ -33,7 +31,6 @@ setInterval(function() {
         alert("You suck . Score " + counter);
         bert.style.top = 100 + "px"; // reset character
         counter = 0; //reset counter after you lose
-        //highcounter = 0; 
     }
 
 }, 10);
@@ -55,8 +52,6 @@ function jump(){
     }, 10);
 }
 
-
-// Fix "Game Over" principle when touching bottom, character respawns on top now. 
 // Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
 // Put each score in array per level, add plus operator per round => result is Highscore localStorage  !
 
