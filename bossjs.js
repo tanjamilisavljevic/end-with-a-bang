@@ -4,18 +4,29 @@ let bert = document.getElementById("bert");
 let jumping = 0;
 let counter = 0;
 
+
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container"); 
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
     counter++;
-    //highcounter++;
     score.innerHTML = "SCORE : " + counter;
-    //highcounter.innerHTML = "HIGHSCORE : " + highcounter;
-    console.log(random)
-    console.log(counter)
+    //console.log(random)
+    //console.log(counter)
 });
+// Create localStorage - get Highscore
+const counterUp = () => {
+    if ( typeof( Storage ) !== "undefined") {
+        if ( localStorage.counter ) {
+            localStorage.counter = Number( localStorage.counter ) + 1;
+            console.log(localStorage.counter);
+            document.querySelector(".highscore").innerHTML = `Highscore ${localStorage.counter}`;
+        } else {
+            localStorage.setItem("highscore", 0);
+        }
+    }
+}
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
@@ -29,8 +40,8 @@ setInterval(function() {
 
     if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
         alert("You suck . Score " + counter);
-        bert.style.top = 100 + "px"; // reset character
         counter = 0; //reset counter after you lose
+        bert.style.top = 100 + "px"; // reset character
     }
 
 }, 10);
@@ -51,6 +62,7 @@ function jump(){
         jumpCount++ ;
     }, 10);
 }
+
 
 // Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
 // Put each score in array per level, add plus operator per round => result is Highscore localStorage  !
