@@ -4,7 +4,11 @@
 } 
 /* PAGE STYLING */
 body {
-    background-color: #7F95D1;
+    background-image: url(img/flamesbackground.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -18,45 +22,51 @@ h1 {
 }
 
 /* IN GAME ELEMENT STYLING */
-#game {
+.game {
     /* Center */
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -400px; /* Half of height*/
-    margin-left: -350px; /* Half of width */
+    margin-left: -500px; /* Half of width */
     /* Screen size game */
-    width: 700px;
+    width: 1000px;
     height: 800px;
-    border: 1px solid pink;
+    border: 1px solid yellow;
+    border-radius: 10px;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
+    background-color: rgb(78, 2, 2);
+    height: 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#pipe {
+.pipe {
     width: 50px;
     height: 800px;
-    background-color: green;
+    background-image: url(img/flames.jpg);
     position: relative;
     left: 650px;
     animation: block 2s infinite linear;
 }   
 
 @keyframes  block {
-    0% {left:800px;}
+    0% {left:1000px;}
     100% {left:-100px;}
 }
 
-#hole {
+.hole {
     width: 50px;
     height: 150px;
-    background-color: #7F95D1;
+    background-color: rgb(78, 2, 2);
     position: relative;
     left: 650px;
     top: -500px;
     animation: block 2s infinite linear;
 }
 
-#bert {
+.bert {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -64,10 +74,9 @@ h1 {
     border-radius: 50%;
 }
 
-#floor {
+.floor {
     width: 700px;
     height: 100px;
-    background-color: pink;
     position: absolute;
     bottom: 0%;
     left: 50%;
@@ -99,48 +108,54 @@ img {
     overflow: hidden;
   }
   
-  #floor {
+  .floor {
     width: 100%;
     height: 14%;
     position: absolute;
-    background-image: url("img/base.png");
+    background-image: url("img/floor.jpg");
     /*background-size: 60px 60px 60px 60px;*/
     animation: animate 210ms linear infinite;
+    border: ;
   }
 
 
 
 
-/* Jonathan
+/* Jonathan */
 
 .entergame{
-    background-color: #f6f6f6;
+    background-color: rgb(139, 40, 22);
     height: 1000px;
     width: 100%;
-    opacity: 0.95;
+    opacity: 0.90;
     position: absolute;
 }
 
-.entergame h3{
-    text-align: left;
-} 
-
-.btn-entergame{
-    width: 300px;
-    height: 300px;
-    margin-top: 150px;
+button{
+    background-color: rgb(78, 2, 2);
+    font-size: medium;
+    color: rgb(252, 255, 53);
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 100px;
+    margin-top: 200px;
+    margin-left: 30px;
+    box-shadow: 4px 4px 4px rgb(255, 174, 0);
+    border: none;
 }
 
-
-button{
-    background-color: rgb(184, 221, 247);
+.btn-playagain{
+    background-color: rgb(151, 0, 0);
     font-size: medium;
-    color: rgb(36, 52, 138);
-    height: 40px;
-    width: 120px;
-    border-radius: 10px;
-    margin: 20px;
-    box-shadow: 4px 4px 4px rgb(45, 115, 161);
+    color: rgb(252, 255, 53);
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 100px;
+    margin-top: 200px;
+    margin-left: 30px;
+    box-shadow: 4px 4px 4px rgb(255, 174, 0);
     border: none;
 }
 
@@ -148,4 +163,14 @@ button:hover{
     transform: scale(1.2);
     
 }
-*/
+
+.score-container{
+    background-color: rgb(151, 0, 0);
+    color: rgb(252, 255, 53);
+    margin-left: 4%;
+    margin-right: 87%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+

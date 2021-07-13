@@ -1,4 +1,7 @@
-document.querySelector(".btn-entergame").addEventListener("click", function(){
+
+// TODO: click to start game
+
+document.querySelector(".btn-entergame").addEventListener("click", () =>{
 
     let enterScreen = document.querySelector(".entergame");
 
@@ -14,43 +17,50 @@ document.querySelector(".btn-entergame").addEventListener("click", function(){
 
       //  5 SECOND COUNTDOWN
     
-    var timeLeft = 3;
-    var elem = document.getElementById('startGame');
+   /* var timeLeft = 3;
+    var seconds = document.getElementById("startGame");
 
     var timerId = setInterval(countdown, 1000);
 
-    function countdown() {
+    const countdown = () => {
         if (timeLeft == -1) {
             clearTimeout(timerId);
             doSomething();
         } else {
-            elem.innerHTML = timeLeft;
+            seconds.innerHTML = timeLeft;
             timeLeft--;
         }
     };
+    */
 
     // start game when pressing start
 
-// restart game when pressing restart ( when you lost)
 
-// continuing with level 3 when beating level 2
-let pipe = document.getElementById("pipe");
-let hole = document.getElementById("hole");
-let bert = document.getElementById("bert");
+let pipe = document.querySelector(".pipe");
+let hole = document.querySelector(".hole");
+let bert = document.querySelector(".bert");
 let jumping = 0;
 let counter = 0;
-// Spawn Pipes
+
+
+// PIPES
 hole.addEventListener('animationiteration', () => {
+    // random position of the hole
+    let score = document.querySelector(".score-container"); 
     let random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
-    console.log(random)
-    console.log(counter)
+    score.innerHTML = "SCORE : " + counter;
 });
-// Gravity 
+
+
+
+
+// GRAVITY 
 setInterval(function() {
+    // makes Bert come down (gravity)
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-    if (jumping == 0) { // Gravity
+    if (jumping == 0) {
         bert.style.top = ( bertTop + 6 ) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
@@ -59,12 +69,16 @@ setInterval(function() {
     if(( bertTop > 780 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
         console.log("You suck . Score " + counter);
         bert.style.top = 100 + "px";
-        counter = 0; 
+        counter = 0;
     }
 
 }, 10);
 
-function jump(){
+
+
+
+// Make Bert jump
+const jump = () => {
     jumping = 1;
     let jumpCount = 0;
     let jumpInterval = setInterval(function(){
@@ -80,13 +94,11 @@ function jump(){
         jumpCount++ ;
     }, 10);
 }
+jump();
 
-function score () {
-    let score = document.querySelector(".score"); 
-    // add innerHTML after break. display counter, which is the score (see console log above)
-}
 
-// Play again page
+// TODO : restart game when pressing restart ( when you lost)
+/*// Play again page
 let matchScreen = document.querySelector(".match");
 let playAgainScreen = document.querySelector(".playagain");
 
@@ -105,7 +117,7 @@ function playAgain(){
 
     });
     
-};
+};*/
 
-});  
+});
 	
