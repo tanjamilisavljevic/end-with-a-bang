@@ -22,7 +22,7 @@ hole.addEventListener('animationiteration', () => {
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
     if (jumping == 0) { // Gravity
-        bert.style.top = ( bertTop + 6 ) + "px";
+        bert.style.top = ( bertTop + 7 ) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));

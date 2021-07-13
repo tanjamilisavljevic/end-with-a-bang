@@ -38,7 +38,7 @@ h1 {
     background-color: green;
     position: relative;
     left: 650px;
-    animation: block 2s infinite linear;
+    animation: block 1.3s infinite linear;
 }
 
 @keyframes  block {
@@ -53,7 +53,7 @@ h1 {
     position: relative;
     left: 650px;
     top: -500px;
-    animation: block 2s infinite linear;
+    animation: block 1.3s infinite linear;
 }
 
 #bert {
@@ -105,5 +105,5 @@ html, body {
     position: absolute;
     background-image: url("img/base.png");
     /*background-size: 60px 60px 60px 60px;*/
-    animation: animate 210ms linear infinite;
+    animation: animate 130ms linear infinite;
 }
