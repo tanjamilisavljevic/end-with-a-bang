@@ -63,8 +63,13 @@ h1 {
     top: 100px;
     border-radius: 50%;
 }
+#floor {
+    bottom: 0;
+
+}
 
 img {
     border-radius: 50px;
 }
+
 
