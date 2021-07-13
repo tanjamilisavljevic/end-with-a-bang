@@ -21,18 +21,18 @@ hole.addEventListener('animationiteration', () => {
 // Gravity 
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-    let bertBottom = parseInt(window.getComputedStyle(bert).getPropertyValue("bottom"));
+
     if (jumping == 0) { // Gravity
         bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
-        bert.style.bottom = ( bertBottom + 100) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-    let cTop = -(800 - bertTop);
-    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) {
+    let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
+
+    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 130 )))) { //3 dif statements if all true = game over
         alert("You suck . Score " + counter);
         bert.style.top = 100 + "px"; // reset character
-        counter = 0;
+        counter = 0; //reset counter after you lose
         //highcounter = 0; 
     }
 
