@@ -15,7 +15,7 @@ const counterUp = () => {
 };
 
 const makePipesAppear = () => {
-    let score = document.querySelector(".score-container");
+    let score = document.querySelector(".score");
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random + "px";
     score.classList.add('score-container-extra');
