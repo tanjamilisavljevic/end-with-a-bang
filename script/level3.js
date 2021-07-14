@@ -1,58 +1,72 @@
-let pipe = document.getElementById("pipe");
-let hole = document.getElementById("hole");
-let bert = document.getElementById("bert");
+const pipe = document.getElementById("pipe");
+const hole = document.getElementById("hole");
+const bert = document.getElementById("bert");
 let jumping = 0;
-let counter = 0;
-//let highcounter = 0;
 
-// Spawn Pipes
-hole.addEventListener('animationiteration', () => {
-    let score = document.querySelector(".score-container");
-    let random = -((Math.random() * 317) + 383);
-    hole.style.top = random  + "px";
-    score.classList.add('score-container-extra');
-    counter++;
-    //highcounter++;
-    score.innerHTML = "SCORE : " + counter;
-    //highcounter.innerHTML = "HIGHSCORE : " + highcounter;
-    console.log(random)
-    console.log(counter)
-    //console.log(highcounter)
-});
-// Gravity
-setInterval(function() {
-    let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-
-    if (jumping === 0) { // Gravity
-        bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
-    }
-    let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
-    let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-    let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
-
-    if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
-        alert("You suck . Score " + counter);
-        bert.style.top = 100 + "px"; // reset character
-        counter = 0; //reset counter after you lose
-        //highcounter = 0;
-    }
-
-}, 10);
-
-function jump(){
-    jumping = 1;
-    let jumpCount = 0;
-    let jumpInterval = setInterval(function(){
-        let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-        if (( bertTop > 6 ) && ( jumpCount < 15 )) { // change count for harder or easier gravity response
-            bert.style.top = ( bertTop - 4 ) + "px" ;
+const counterUp = () =>{
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.counter) {
+            localStorage.counter = Number(localStorage.counter) + 1;
+            document.getElementById("highscore").innerHTML = `Highscore - ${localStorage.counter}`;
+        } else {
+            localStorage.setItem("counter", 0);
         }
-        if ( jumpCount > 20 ) {
-            clearInterval( jumpInterval );
-            jumping = 0 ;
-            jumpCount = 0
-        }
-        jumpCount++ ;
-    }, 10);
+    }
 }
+
+
+
+const startTheGame = () => {
+
+// Pipes appear randomly
+    hole.addEventListener('animationiteration', () => {
+        let score = document.querySelector(".score-container");
+        let random = -((Math.random() * 317) + 383);
+        hole.style.top = random + "px";
+        score.classList.add('score-container-extra');
+        counterUp();
+        score.innerHTML = "Score - " + `${localStorage.counter}`;
+    });
+// Gravity
+    setInterval(() => {
+        let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
+        if (jumping === 0) {
+            bert.style.top = (bertTop + 3) + "px"
+        }
+        let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
+        let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+        let cTop = -(800 - bertTop);
+
+        if ((bertTop > 640) || ((pipeLeft < 20) && (pipeLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 120)))) { //3 dif statements if all true = game over
+            alert("You lose, bud. Score -  " + `${localStorage.counter}`);
+            localStorage.removeItem('counter'); //reset score
+            bert.style.top = 100 + "px"; // reset bert
+        }
+    }, 10);
+
+
+    //todo: stopthe game function which stops the interval and the two event listeners
+    //todo: call stop function afer losing
+    const jump = () => {
+        jumping = 1;
+        let jumpCount = 0;
+        let jumpInterval = setInterval(function () {
+            let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
+            if ((bertTop > 6) && (jumpCount < 15)) {
+                bert.style.top = (bertTop - 5) + "px";
+            }
+            if (jumpCount > 20) {
+                clearInterval(jumpInterval);
+                jumping = 0;
+                jumpCount = 0
+            }
+            jumpCount++;
+        }, 10);
+    }
+    document.addEventListener("click", jump);
+    document.addEventListener("keydown", jump);
+}
+
+document.getElementById('startButton').addEventListener("click", startTheGame);
+
 

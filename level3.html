@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()" onkeydown="jump()">
+<html lang="en"">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,12 +25,15 @@
 
 <div class="wrapper">
     <div class="score-container">
-        <div class="score" ></div>
-        <!--     <div class="highscore">HIGHSCORE : 0</div>-->
+        <div class="score"></div>
+        <div id="highscore"></div>
+    </div>
+
+    <div class="startButtonContainer">
+        <button id="startButton" class="startButton">Play!</button>
     </div>
 
     <div id="game">
-        <!--        <div id="sun"> <img src="img/sun.png" alt="sun" width="80px" height="80px"> </div>-->
         <div id="pipe"><img class="stone" src="img/stone.png" alt="obstacle-pipe"></div>
         <div id="hole"></div>
         <div id="bert"><img src="img/8bitbert.png" alt="flappy Bert" width="80px" height="80px"></div>
@@ -41,7 +44,6 @@
 <div class="titleWrapper">
     <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
 </div>
-
 
 
 <script src="script/level3.js"></script>
