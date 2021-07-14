@@ -23,7 +23,7 @@ hole.addEventListener('animationiteration', () => {
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
 
-    if (jumping == 0) { // Gravity
+    if (jumping === 0) { // Gravity
         bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
@@ -35,7 +35,6 @@ setInterval(function() {
         bert.style.top = 100 + "px"; // reset character
         counter = 0; //reset counter after you lose
         //highcounter = 0;
-
     }
 
 }, 10);
