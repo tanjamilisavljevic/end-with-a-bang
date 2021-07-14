@@ -11,9 +11,9 @@ function startGame() {
         let jumpInterval = setInterval(function () {
             let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
             if ((bertTop > 6) && (jumpCount < 15)) {
-                bert.style.top = (bertTop - 4) + "px";
+                bert.style.top = (bertTop - 5) + "px";
             }
-            if (jumpCount > 10) {
+            if (jumpCount === 10) {
                 clearInterval(jumpInterval);
                 jumping = 0;
                 jumpCount = 0

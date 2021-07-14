@@ -12,7 +12,7 @@ h1 {
     -webkit-text-stroke-width: 0.015em;
     -webkit-text-stroke-color: black;
     animation: 0.2s appearAnimation ease-in;
-    margin: O;
+
 
 }
 
@@ -100,7 +100,7 @@ html, body {
     height: 14%;
     position: absolute;
     background-image: url("../img/base.png");
-    background-size: 60px 60px 60px 60px;
+    /*background-size: 60px 60px 60px 60px;*/
     animation: animate 210ms linear infinite;
 }
 
