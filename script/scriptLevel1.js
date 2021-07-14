@@ -1,19 +1,6 @@
-// start game when pressing start
-
-play = () => {
-    move = () => {
-
-    }
-
-}
-
-// restart game when pressing restart ( when you lost)
-
-// continuing with level 3 when beating level 2
-
-let pipe = document.getElementById("pipe");
-let hole = document.getElementById("hole");
-let bert = document.getElementById("bert");
+let pipe = document.getElementById(".pipe");
+let hole = document.getElementById(".hole");
+let bert = document.getElementById(".bert");
 let jumping = 0;
 let counter = 0;
 // Spawn Pipes
@@ -28,7 +15,7 @@ hole.addEventListener('animationiteration', () => {
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
     if (jumping == 0) { // Gravity
-        bert.style.top = ( bertTop + 6 ) + "px";
+        bert.style.top = ( bertTop + 9 ) + "px";
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
