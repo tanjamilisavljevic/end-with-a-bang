@@ -35,6 +35,7 @@ setInterval(function() {
         bert.style.top = 100 + "px"; // reset character
         counter = 0; //reset counter after you lose
         //highcounter = 0;
+
     }
 
 }, 10);
