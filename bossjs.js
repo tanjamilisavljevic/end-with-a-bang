@@ -8,25 +8,20 @@ const counterUp = () => {
     if ( typeof( Storage ) !== "undefined") {
         if ( localStorage.counter ) {
             localStorage.counter = Number( localStorage.counter ) + 1;
-            console.log(localStorage.counter);
-            document.querySelector(".highscore").innerHTML = `Highscore ${localStorage.counter}`;
+            document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
         } else {
-            localStorage.setItem("highscore", 0);
+            localStorage.setItem("counter", 0);
         }
     }
 }
-const resetStorage = () => {
-    
-    //clear storage key
-    localStorage.removeItem("count");
-}
+
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container"); 
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
     counter++;
-    counterUp();// add counter to localStorage
+    counterUp();
     score.innerHTML = "SCORE : " + counter;
     //console.log(random)
     //console.log(counter)
@@ -47,9 +42,12 @@ setInterval(function() {
     if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
         alert("You suck . Score " + counter);
         counter = 0; //reset counter after you lose
+        const resetStorage = () => {
+            localStorage.removeItem("counter");
+        }
+        resetStorage();
         bert.style.top = 100 + "px"; // reset character
     }
-    resetStorage();
 }, 10);
 
 function jump(){
