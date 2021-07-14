@@ -36,7 +36,7 @@ const gravityCallback = () => {
 
         alert("You lose, bud. Score -  " + `${localStorage.counter}`);
         localStorage.removeItem('counter'); //reset score
-        bert.style.top = 100 + "px"; // reset bert
+        bert.style.top = 275 + "px"; // reset bert
         stopTheGame(); //stop the game
     }
 };
@@ -58,6 +58,17 @@ const jump = () => {
     }, 10);
 };
 
+const pauseAnimations = () => {
+    document.getElementById("floor").style.animationPlayState = "paused";
+    document.getElementById("hole").style.animationPlayState = "paused";
+    document.getElementById("pipe").style.animationPlayState = "paused";
+}
+const resumeAnimations = () => {
+    document.getElementById("floor").style.animationPlayState = "running";
+    document.getElementById("hole").style.animationPlayState = "running";
+    document.getElementById("pipe").style.animationPlayState = "running";
+}
+
 let gravity;
 
 const stopTheGame = () => {
@@ -65,9 +76,11 @@ const stopTheGame = () => {
     clearInterval(gravity);
     document.removeEventListener('click', jump);
     document.removeEventListener('keydown', jump);
+   pauseAnimations();
 };
 
 const startTheGame = () => {
+    resumeAnimations();
 // Pipes appear randomly
     hole.addEventListener('animationiteration', makePipesAppear);
 // Gravity
