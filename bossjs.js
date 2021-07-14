@@ -2,8 +2,8 @@ let pipe = document.getElementById("pipe");
 let hole = document.getElementById("hole");
 let bert = document.getElementById("bert");
 let jumping = 0;
-let counter = 0;
 
+//create highscore library (inspect)
 const counterUp = () => {
     if ( typeof( Storage ) !== "undefined") {
         if ( localStorage.counter ) {
@@ -17,16 +17,14 @@ const counterUp = () => {
 
 // Spawn Pipes
 hole.addEventListener('animationiteration', () => {
-    let score = document.querySelector(".score-container"); 
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
-    counter++;
+    let score = document.querySelector(".score"); 
     counterUp();
-    score.innerHTML = "SCORE : " + counter;
+    score.innerHTML = "SCORE : " + `${localStorage.counter}`; //revise
     //console.log(random)
-    //console.log(counter)
+    console.log(`${localStorage.counter}`);
 });
-// Create localStorage - get Highscore
 
 // Gravity 
 setInterval(function() {
@@ -40,8 +38,7 @@ setInterval(function() {
     let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
 
     if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) { //3 dif statements if all true = game over
-        alert("You suck . Score " + counter);
-        counter = 0; //reset counter after you lose
+        alert("You suck . Score " + `${localStorage.counter}`);
         const resetStorage = () => {
             localStorage.removeItem("counter");
         }
