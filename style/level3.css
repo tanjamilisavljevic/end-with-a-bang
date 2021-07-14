@@ -26,9 +26,9 @@ h1 {
     /* Screen size game */
     width: 700px;
     height: 800px;
-    border: 1px solid pink;
+    border: 1px solid #FFEBE7;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
-    background-color: #FFC0BE;
+    background-color: #7F95D1;
     box-shadow: 0px 2px 30px 12px #FFEBE7;
     z-index: 2;
     /*background-image: url("../img/blue.jpg");*/
@@ -40,6 +40,7 @@ h1 {
     position: relative;
     left: 650px;
     animation: block 1.5s infinite linear;
+    animation-play-state: paused;
 }
 /*#sun{*/
 /*    position: relative;*/
@@ -54,11 +55,12 @@ h1 {
 #hole {
     width: 50px;
     height: 150px;
-    background-color: #FFC0BE;
+    background-color: #7F95D1;
     position: relative;
     left: 650px;
     top: -500px;
     animation: block 1.5s infinite linear;
+    animation-play-state: paused;
 }
 
 
@@ -71,13 +73,16 @@ h1 {
 }
 
 #floor {
-    width: 700px;
-    height: 100px;
     background-color: pink;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    height: 14%;
+    background-image: url("../img/grass.png");
+    animation: animate 150ms linear infinite;
+    animation-play-state: paused;
 }
 img {
     border-radius: 50%;
@@ -108,14 +113,7 @@ html, body {
     overflow: hidden;
 }
 
-#floor {
-    width: 100%;
-    height: 14%;
-    position: absolute;
-    background-image: url("../img/grass.png");
-    /*background-size: 60px 60px 60px 60px;*/
-    animation: animate 150ms linear infinite;
-}
+
 
 .score-container-extra{
     display: flex;
