@@ -17,15 +17,16 @@
     <div class="entergame">
         <button class="btn-entergame"><h3>Are you ready? 😇</h3></button>
     </div>
-    <div class="playagain">
-        <button class="btn-playagain"><h3>Want to try again? 👿</h3></button>
-    </div>
+    <!--<div class="playagain">
+        <button class="btn-playagain" onclick="refreshPage()"><h3>Want to try again? 👿</h3></button>
+    </div>-->
     <div class="startGame"></div>
     <div id="title">
         <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
     </div>
+    <div class="score"></div>
     <div class="score-container">
-        <div class="score"></div>
+        <div id="highscore" onclick="counterUp()"></div> <!--WIP Link to localStorage-->
     </div>
     <div class="game">
         <div class="pipe"></div>

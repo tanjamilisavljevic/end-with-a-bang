@@ -40,46 +40,10 @@
         let hole = document.querySelector(".hole");
         let bert = document.querySelector(".bert");
         let jumping = 0;
-        let counter = 0;
 
-
-        // PIPES
-        hole.addEventListener('animationiteration', () => {
-            // random position of the hole
-            let score = document.querySelector(".score-container"); 
-            let random = -((Math.random() * 317) + 383);
-            hole.style.top = random + "px";
-            counter++;
-            score.innerHTML = "SCORE : " + counter;
-        });
-
-
-
-
-        // GRAVITY 
-        setInterval(() => {
-            // makes Bert come down (gravity)
-            let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-            if (jumping == 0) {
-                bert.style.top = ( bertTop + 3 ) + "px";
-            }
-            let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
-            let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-            var cTop = -(800 - bertTop);
-
-        if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
-                alert("You suck mate. Only " + counter + " points");
-                location.reload();
-                bert.style.top = 100 + "px";
-                counter = 0;
-            }
-
-        }, 10);
-
-
-
+        
         // Make Bert jump
-        document.onclick = function jump(){
+        document.onclick = jump = () => {
             jumping = 1;
             let jumpCount = 0;
             let jumpInterval = setInterval(() =>{
@@ -95,6 +59,71 @@
                 jumpCount++ ;
             }, 10);
         };
+        
+        //HIGHSCORE STORAGE
+        const counterUp = () => {
+            if ( typeof( Storage ) !== "undefined") {
+                if ( localStorage.counter ) {
+                    localStorage.counter = Number( localStorage.counter ) + 1;
+                    document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
+                } else {
+                    localStorage.setItem("counter", 0);
+                }
+            };
+        };
+
+        // PIPES
+        hole.addEventListener('animationiteration', () => {
+            // random position of the hole
+            let score = document.querySelector(".score"); 
+            let random = -((Math.random() * 317) + 383);
+            hole.style.top = random + "px";
+            counterUp();
+            score.innerHTML = "SCORE : " + localStorage.counter;
+            console.log(`${localStorage.counter}`);
+            });
+
+
+
+
+        // GRAVITY 
+        setInterval(() => {
+            // makes Bert come down (gravity)
+            let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
+            if (jumping == 0) {
+                bert.style.top = ( bertTop + 3 ) + "px";
+            }
+            let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
+            let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+            var cTop = -(800 - bertTop);
+
+            if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
+                //alert("You suck mate. Only " + localStorage.counter + " points");
+                const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
+                    if(startOver == true){
+                        location.reload();
+                    }
+                    else {
+                        document.location.href = "index.html";
+                    }
+                const resetStorage = () => {
+                    localStorage.removeItem("counter");
+                }
+                resetStorage();
+                bert.style.top = 100 + "px";
+            }
+
+            if(localStorage.counter == 4){
+                const levelWin = confirm( "CONGRATULATIONS dude or dudette ! Press OK to go to the next level ! The next level is waiting for you. Cancel means back to the main page")
+                if(localStorage.counter == 4){
+                    document.location.href = "level3.html";
+                }
+                else {
+                    document.location.href = "index.html";
+                }
+            }
+
+        }, 10);
 
         /*
         // TODO : restart game when pressing restart ( when you lost)
