@@ -34,6 +34,7 @@ h1 {
     height: 800px;
     border: 1px solid yellow;
     border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px rgb(255, 174, 0);
     overflow: hidden; /*Pipe doesn't exceed game screen*/
     background-color: rgb(78, 2, 2);
     height: 105%;
@@ -48,7 +49,7 @@ h1 {
     background-image: url(img/flames.jpg);
     position: relative;
     left: 650px;
-    animation: block 2s infinite linear;
+    animation: block 3s infinite linear;
 }   
 
 @keyframes  block {
@@ -58,12 +59,12 @@ h1 {
 
 .hole {
     width: 50px;
-    height: 150px;
+    height: 200px;
     background-color: rgb(78, 2, 2);
     position: relative;
     left: 650px;
     top: -500px;
-    animation: block 2s infinite linear;
+    animation: block 3s infinite linear;
 }
 
 .bert {
@@ -115,7 +116,6 @@ img {
     background-image: url("img/floor.jpg");
     /*background-size: 60px 60px 60px 60px;*/
     animation: animate 210ms linear infinite;
-    border: ;
   }
 
 
@@ -172,5 +172,6 @@ button:hover{
     text-align: center;
     padding: 10px;
     border-radius: 15px;
+    box-shadow: 4px 4px 4px rgb(255, 174, 0);
 }
 
