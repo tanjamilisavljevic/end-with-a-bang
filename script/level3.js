@@ -10,6 +10,7 @@ hole.addEventListener('animationiteration', () => {
     let score = document.querySelector(".score-container");
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random  + "px";
+    score.classList.add('score-container-extra');
     counter++;
     //highcounter++;
     score.innerHTML = "SCORE : " + counter;
@@ -22,7 +23,7 @@ hole.addEventListener('animationiteration', () => {
 setInterval(function() {
     let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
 
-    if (jumping == 0) { // Gravity
+    if (jumping === 0) { // Gravity
         bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
     }
     let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
