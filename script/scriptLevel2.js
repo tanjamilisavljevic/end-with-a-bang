@@ -68,13 +68,13 @@
             var cTop = -(800 - bertTop);
 
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
-                //alert("You suck mate. Only " + counter + " points");
+                alert("You suck mate. Only " + counter + " points");
+                location.reload();
                 bert.style.top = 100 + "px";
                 counter = 0;
             }
 
         }, 10);
-
 
 
 
