@@ -84,6 +84,7 @@ const startTheGame = () => {
 // Pipes appear randomly
     hole.addEventListener('animationiteration', makePipesAppear);
 // Gravity
+    clearInterval(gravity);
     gravity = setInterval(gravityCallback, 10);
 //Jumping
     document.addEventListener("click", jump);
@@ -91,3 +92,5 @@ const startTheGame = () => {
 };
 
 document.getElementById('startButton').addEventListener("click", startTheGame);
+
+//TODO: fix score
