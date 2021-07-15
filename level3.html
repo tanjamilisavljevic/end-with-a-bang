@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<!--    favicon-->
+    <!--    favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -34,6 +34,11 @@
             <div class="score-container">
                 <div class="score"></div>
                 <div id="highscore"></div>
+                <div class="buttonContainer">
+                    <div class="startButtonContainer" id="enterScreen">
+                        <button id="startButton" class="startButton">Play!</button>
+                    </div>
+                </div>
             </div>
             <div class="homepageLinkWrapper">
                 <a href="index.html"> <img class="homeLink" src="img/8bitbert.png" alt="Bert"></a>
@@ -42,16 +47,12 @@
                 <p class="toHome"> PREVIOUS LEVEL </p>
                 <a href="bosslevel.html"> <img class="bossLink" src="img/dennis.png" alt="Dennis"></a>
                 <p class="toBoss"> BOSS LEVEL UNLOCKED </p>
-            </div>
-        </div>
-
-        <div class="buttonContainer">
-            <div class="startButtonContainer" id="enterScreen">
-                <button id="startButton" class="startButton">Play!</button>
+                <div class="titleWrapper">
+                    <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
+                </div>
             </div>
         </div>
     </div>
-
     <div id="game">
         <div id="pipe"><img class="stone" src="img/stone.png" alt="obstacle-pipe"></div>
         <div id="hole"></div>
@@ -60,9 +61,6 @@
     </div>
 </div>
 
-<div class="titleWrapper">
-    <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
-</div>
 
 <script src="script/level3.js"></script>
 </body>

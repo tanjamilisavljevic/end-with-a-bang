@@ -125,6 +125,7 @@ html, body {
     border-left: none;
     max-width: 15vw;
     padding: 0.5em;
+    align-self: flex-end;
 }
 
 h1 {
@@ -236,7 +237,6 @@ h1 {
 }
 
 
-
 .bossLink {
     max-height: 150px;
     margin-top: 5vh;
@@ -246,6 +246,7 @@ h1 {
     visibility: hidden;
 
 }
+
 .bossLink:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
@@ -254,6 +255,7 @@ h1 {
 .bossLink:active {
     border-color: #FFEBE7;
 }
+
 .toBoss {
     font-family: 'Press Start 2P', cursive;
     font-size: 11px;
@@ -266,12 +268,6 @@ h1 {
     color: #FFEBE7;
     cursor: pointer;
 }
-
-
-
-
-
-
 
 @keyframes shake {
     0% {
@@ -322,5 +318,5 @@ h1 {
 
 
 /*make responsive*/
-/*add 8bit for boss level*/
 /*change cursor*/
+/*fix title logo*/
