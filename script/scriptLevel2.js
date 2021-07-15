@@ -19,7 +19,7 @@
 
 
     countdownFunction = () => {
-        var timeleft = 5;
+        var timeleft = 3;
         var timer = setInterval(() => {
             if(timeleft <= 0){
                 clearInterval(timer);
@@ -35,24 +35,6 @@
 
         localStorage.removeItem("counter");
     };
-
-    /*countDownFunction = () => {
-        const timeLeft = 3;
-        const seconds = document.querySelector(".countdown");
-
-        const timerId = setInterval(countDownSeconds, 1000);
-
-        const countDownSeconds = () => {
-            if (timeLeft == -1) {
-                clearTimeout(timerId);
-                doSomething();
-            } else {
-                seconds.innerHTML = timeLeft;
-                timeLeft--;
-            }
-        };
-    };
-    countDownFunction();*/
 
     // click button and button disappears and game starts
     document.querySelector(".btn-entergame").addEventListener("click", () =>{
@@ -70,22 +52,7 @@
             setTimeout(() =>{ enterScreen.style.opacity = "0.2";}, 600);
             setTimeout(() =>{ enterScreen.style.opacity = "0.1";}, 700);
             setTimeout(() =>{ enterScreen.style.opacity = "0";}, 800);
-            setTimeout(() =>{ enterScreen.remove()}, 1000);
-
-            /*///  5 SECOND COUNTDOWN
-            const timeleft = 5;
-            const timer = setInterval(function(){
-                if(timeleft <= 0){
-                    clearInterval(timer);
-                    document.querySelector(".countdown").innerHTML = "Finished";
-                } else {
-                    document.querySelector(".countdown").innerHTML = timeleft + " seconds remaining";
-                    timeleft--;
-                }
-            }, 500);
-    
-            console.log(timer);*/
-            
+            setTimeout(() =>{ enterScreen.remove()}, 1000);            
 
             // start game when pressing start
 
@@ -122,7 +89,6 @@
 
                 if ( localStorage.counter ) {
                     localStorage.counter = Number( localStorage.counter ) + 1;
-                    document.getElementById("highscore").innerHTML = "HIGHSCORE : " + localStorage.counter + " 🏆";
                 } else {
                     localStorage.setItem("counter", 1);
                 }
@@ -179,13 +145,13 @@
             }
 
             // Define when  you win and go on to next level
-            if(localStorage.counter == 10){
+            if(localStorage.counter == 2){
 
                 // confirm text
                 const levelWin = confirm( "CONGRATULATIONS dude or dudette ! Press OK to go to the next level ! The next level is waiting for you. Cancel means back to the main page")
                 
                 // OK go to next level
-                if(localStorage.counter == 10){
+                if(localStorage.counter == 2){
                     document.location.href = "level3.html";
                 }
 
@@ -196,28 +162,4 @@
             }
 
         }, 10);
-
-        /*
-        // TODO : restart game when pressing restart ( when you lost)
-        // Play again page
-        let playAgainScreen = document.querySelector(".playagain");
-
-        function playAgain(){
-
-            setTimeout(() =>{ playAgainScreen.style.display = 'block'; }, 3500 );
-
-            document.querySelector(".btn-playagain").addEventListener("click", () => {
-
-                //playagain btn fade out slowly after click
-                playAgainScreen.style.opacity = "0.7";
-                setTimeout(() =>{ playAgainScreen.style.opacity = "0.5";}, 100);
-                setTimeout(() =>{ playAgainScreen.style.opacity = "0.3";}, 200);
-                setTimeout(() =>{ playAgainScreen.style.display = "none";}, 300);
-                setTimeout(() =>{ location.reload();},400);
-
-            });
-            
-        };
-        });
-        */
     });
