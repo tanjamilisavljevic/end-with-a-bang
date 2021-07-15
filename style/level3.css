@@ -5,15 +5,8 @@
 
 /* PAGE STYLING */
 body {
-    background: darkslategrey;
+    background-color: #061072;
 
-}
-
-h1 {
-    font-family: 'Tourney', cursive;
-    -webkit-text-fill-color: #FFEBE7;
-    -webkit-text-stroke-width: 0.015em;
-    -webkit-text-stroke-color: black;
 }
 
 /* IN GAME ELEMENT STYLING */
@@ -27,10 +20,10 @@ h1 {
     /* Screen size game */
     width: 700px;
     height: 800px;
-    border: 5px solid black;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
     background-color: #7F95D1;
     z-index: 2;
+    border: 8px solid darkslategrey;
 }
 
 #pipe {
@@ -121,7 +114,7 @@ html, body {
     border-left: none;
     color: black;
     font-weight: bolder;
-    background-color: blue;
+    background-color: #ADADAD;;
     margin: 1em;
     margin-left: 0;
     padding: 1em;
@@ -133,15 +126,18 @@ html, body {
 }
 
 .titleWrapper {
-    background-color: blue;
-    border: solid black 5px;
+    background-color: #000;
     border-left: none;
     max-width: 20vw;
-    margin-bottom: 2em;
+}
+h1 {
+    font-family: 'Tourney', cursive;
+    color: #FFEBE7;
+    padding: 0.3em;
 }
 
 .startButton {
-    background-color: blue;
+    background-color: #ADADAD;;
     border: solid black 5px;
     max-width: 30vw;
     font-family: 'Press Start 2P', cursive;

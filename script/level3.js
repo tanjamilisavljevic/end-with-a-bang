@@ -38,6 +38,7 @@ const gravityCallback = () => {
         localStorage.removeItem('counter'); //reset score
         bert.style.top = 275 + "px"; // reset bert
         stopTheGame(); //stop the game
+        document.getElementById('startButton').innerText = 'Play again'
     }
 };
 
