@@ -197,6 +197,22 @@ h1 {
     padding: 5px;
 }
 
+.toHome{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    text-decoration: none;
+    padding: 5px;
+}
+.toHome:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.homepageLinkWrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
 .homeLink:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
