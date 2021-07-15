@@ -18,21 +18,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="backgroundContainer">
+    <div class="wrapper">
+        <div class="firstSection">
+            <div class="score-container">
+                <div class="score"></div>
+                <div id="highscore"></div>
+            </div>
+            <a href="index.html"> <img class="homeLink" src="img/8bitbert.png" alt="Bert"> </a>
+        </div>
 
-<div class="wrapper">
-    <div class="score-container">
-        <div class="score"></div>
-        <div id="highscore"></div>
-    </div>
-
-    <div class="backgroundContainer">
         <div class="buttonContainer">
             <div class="startButtonContainer" id="enterScreen">
                 <button id="startButton" class="startButton">Play!</button>
             </div>
             <a class="levelLink" href="bosslevel.html"> 🔥 ENDBOSS BERT BATTLE 🔥 </a>
         </div>
-            <a  href="index.html"> <img class="homeLink" src="img/8bitbert.png" alt="Bert"> </a>
     </div>
 
     <div id="game">
@@ -41,12 +42,13 @@
         <div id="bert"><img src="img/8bitbert.png" alt="flappy Bert" width="80px" height="80px"></div>
         <div id="floor"></div>
     </div>
+</div>
 
-    <div class="titleWrapper">
-        <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
-    </div>
+<div class="titleWrapper">
+    <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
+</div>
 
-    <script src="script/level3.js"></script>
+<script src="script/level3.js"></script>
 </body>
 </html>
 

@@ -109,7 +109,7 @@ html, body {
 
 .score-container-extra {
     display: flex;
-    max-width: 200px;
+    max-width: 20vw;
     border-left: none;
     color: #FFEBE7;
     background-color: #000;
@@ -167,7 +167,7 @@ h1 {
 }
 
 .highscore{
-    max-width: 300px;
+    max-width: 25vw;
     border-left: none;
     color: #FFEBE7;
     background-color: #000;
@@ -182,12 +182,15 @@ h1 {
     display: flex;
     flex-flow: row;
     max-width: 100vw;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 80px);
+}
+.firstSection{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    min-width: 100vw;
 }
 .homeLink{
     max-height: 150px;
-    justify-self: flex-end;
-    margin-left: 65vw;
     margin-top: 5vh;
     border: solid 5px black;
     border-radius: 0;
@@ -198,6 +201,11 @@ h1 {
     animation: shake 0.5s;
     animation-iteration-count: 1;
 }
+
+.homeLink:active {
+    border-color: #FFEBE7;
+}
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
