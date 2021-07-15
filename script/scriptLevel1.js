@@ -55,7 +55,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         let jumpInterval = setInterval(function(){
             let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
             if (( bertTop > 6 ) && ( jumpCount < 15 )) { // change count for harder or easier gravity response
-                bert.style.top = ( bertTop - 4 ) + "px" ;
+                bert.style.top = ( bertTop - 5 ) + "px" ;
             }
             if ( jumpCount > 20 ) {
                 clearInterval( jumpInterval );
@@ -83,7 +83,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
 
         if (jumping == 0) { // Gravity
-            bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
+            bert.style.top = ( bertTop + 1 ) + "px"; // pushed bert 6 px down when not clicked => gravity
         }
         let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
         let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
@@ -92,7 +92,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
             hitSound.play();
             dieSound.play();
-            const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
+            const startOver = confirm ("DUDE " + localStorage.counter + " points on level 1? Go play outside kid!");
             if ( startOver == true ) {
                 location.reload() ;
             }
@@ -104,8 +104,8 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             bert.style.top = 100 + "px";
         }
 
-        if(localStorage.counter == 10){
-            const levelWin = confirm( "Congrats you finish the noob level")
+        if(localStorage.counter == 2){
+            const levelWin = confirm( "Congrats you finish the Noob level! Lets see if you can beat Level 2 Noob")
             document.location.href="game2.html"
         }
         // callback onPageLoad reset()

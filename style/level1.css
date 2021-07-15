@@ -29,26 +29,26 @@ h1 {
     overflow: hidden; /*Pipe doesn't exceed game screen*/
 }
 #pipe {
-    width: 50px;
+    width: 25px;
     height: 800px;
     background-color: lightblue;
     position: relative;
     left: 800px;
-    animation: block 2s infinite linear;
+    animation: block 4s infinite linear;
 }
 @keyframes  block {
     0% {left:800px;}
     100% {left:-50px;}
 }
 #hole {
-    width: 50px;
+    width: 25px;
     height: 180px;
     overflow: hidden;
     background-color: gold;
     position: relative;
     left: 700px;
     top: -800px;
-    animation: block 2s infinite linear;
+    animation: block 4s infinite linear;
 }
 
 #bert {
