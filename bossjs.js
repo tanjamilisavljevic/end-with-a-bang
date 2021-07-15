@@ -1,10 +1,11 @@
 let hole = document.getElementById("hole");
 const bgTrack = new Audio("sound/crack3.mp3"); 
 const flapSound = new Audio("sound/sfx_wing.mp3");
-const scoreSound = new Audio("sound/sfx_point.mp3"); 
+const scoreSound = new Audio("sound/energy3.wav"); 
 const swooshSound = new Audio("sound/sfx_swooshing.mp3");
 const hitSound  = new Audio("sound/sfx_hit.mp3"); 
-const dieSound = new Audio("sound/sfx_die.mp3");
+const dieSound = new Audio("sound/unfect.ogg");
+const gamovrSound = new Audio("sound/laugh.wav")
 
 const resetStorage = () => {
     swooshSound.play();
@@ -79,6 +80,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
             hitSound.play();
             dieSound.play();
+            gamovrSound.play();
             const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
                 if ( startOver == true ) {
                     location.reload() ;
