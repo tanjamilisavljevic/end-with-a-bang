@@ -1,4 +1,7 @@
 let hole = document.getElementById("hole");
+let pipe = document.getElementById("pipe");
+let bert = document.getElementById("bert");
+let jumping = 0;
 const bgTrack = new Audio("sound/crack3.mp3"); 
 const flapSound = new Audio("sound/sfx_wing.mp3");
 const scoreSound = new Audio("sound/energy3.wav"); 
@@ -29,12 +32,6 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             }
         }
     }
-
-
-    let pipe = document.getElementById("pipe");
-    let bert = document.getElementById("bert");
-    let jumping = 0;
-    
     
     document.onclick = function jump(){
         flapSound.play();
