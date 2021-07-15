@@ -1,7 +1,3 @@
-let hole = document.getElementById("hole");
-let pipe = document.getElementById("pipe");
-let bert = document.getElementById("bert");
-let jumping = 0;
 const bgTrack = new Audio("sound/crack3.mp3"); 
 const flapSound = new Audio("sound/sfx_wing.mp3");
 const scoreSound = new Audio("sound/energy3.wav"); 
@@ -9,6 +5,10 @@ const swooshSound = new Audio("sound/sfx_swooshing.mp3");
 const hitSound  = new Audio("sound/sfx_hit.mp3"); 
 const dieSound = new Audio("sound/unfect.ogg");
 const gamovrSound = new Audio("sound/laugh.wav")
+let hole = document.getElementById("hole");
+let pipe = document.getElementById("pipe");
+let bert = document.getElementById("bert");
+let jumping = 0;
 
 
 const resetStorage = () => {
@@ -27,7 +27,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         if ( typeof( Storage ) !== "undefined") {
             if ( localStorage.counter ) {
                 localStorage.counter = Number( localStorage.counter ) + 1;
-                document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
+                //document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
             } else {
                 localStorage.setItem("counter", 0);
             }
@@ -59,12 +59,11 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         hole.style.top = random  + "px";
         let score = document.querySelector(".score"); 
         counterUp();
-        score.innerHTML = "SCORE : " + `${localStorage.counter}`; //revise
-        //console.log(random)
+        score.innerHTML = "SCORE : " + `${localStorage.counter}`; 
         console.log(`${localStorage.counter}`);
     });
 
-    // Gravity 
+
     setInterval(function() {
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
         let gameEnd = false;
@@ -73,7 +72,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         }
         let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
         let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-        let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
+        let cTop = -(800 - bertTop);
 
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
             hitSound.play();
@@ -106,31 +105,12 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         }
 
         if(gameEnd){
-              location.reload();
+            location.reload();
         }
-        // callback onPageLoad reset()
     }, 10);
-
 
 })
 
-/*window.onload = function () {
-    startGame();
-}*/
-
-
-
-/*function onPageLoad () {
-    // Start of the page - static
-    // Keypress / click to start
-    // if lose -> alert
-    // game stops
-    // go back to beginning point  
-}*/
-
-
-// Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
-// Put each score in array per level, add plus operator per round => result is Highscore localStorage  !
 
 
 	
