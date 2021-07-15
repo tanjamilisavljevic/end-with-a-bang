@@ -21,7 +21,7 @@ body {
     width: 700px;
     height: 800px;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
-    background-color: #7F95D1;
+    background-color: #00a3a2;
     z-index: 2;
     border: 8px solid darkslategrey;
 }
@@ -126,11 +126,13 @@ html, body {
     max-width: 15vw;
     padding: 0.5em;
 }
+
 h1 {
     font-family: 'Tourney', cursive;
     color: #FFEBE7;
 }
-.buttonContainer{
+
+.buttonContainer {
     display: flex;
     flex-flow: column;
 }
@@ -144,6 +146,7 @@ h1 {
     margin: 2em;
     cursor: pointer;
 }
+
 .levelLink {
     background-color: #ADADAD;
     border: solid black 5px;
@@ -157,16 +160,22 @@ h1 {
     margin: 2em;
     visibility: hidden;
 }
-.levelLink:active{
+
+.levelLink:active {
     color: #ADADAD;
-    background-color: black ;
-}
-.startButton:active{
-    color: #ADADAD;
-    background-color: black ;
+    background-color: black;
 }
 
-.highscore{
+.startButton:active {
+    color: #ADADAD;
+    background-color: black;
+}
+
+.startButton:hover {
+    border-color: #FFEBE7;
+}
+
+.highscore {
     max-width: 25vw;
     border-left: none;
     color: #FFEBE7;
@@ -178,18 +187,20 @@ h1 {
     font-family: 'Press Start 2P', cursive;
 }
 
-.backgroundContainer{
+.backgroundContainer {
     display: flex;
     flex-flow: row;
     max-width: 100vw;
     min-height: calc(100vh - 80px);
 }
-.firstSection{
+
+.firstSection {
     display: grid;
     grid-template-columns: 80% 20%;
     min-width: 100vw;
 }
-.homeLink{
+
+.homeLink {
     max-height: 150px;
     margin-top: 5vh;
     border: solid 5px black;
@@ -197,22 +208,24 @@ h1 {
     padding: 5px;
 }
 
-.toHome{
+.toHome {
     font-family: 'Press Start 2P', cursive;
     font-size: 11px;
     text-decoration: none;
     padding: 5px;
 }
-.toHome:hover{
-    color: white;
+
+.toHome:hover {
+    color: #FFEBE7;
     cursor: pointer;
 }
 
-.homepageLinkWrapper{
+.homepageLinkWrapper {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
+
 .homeLink:hover {
     animation: shake 0.5s;
     animation-iteration-count: 1;
@@ -223,20 +236,51 @@ h1 {
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.youLost {
+    font-family: 'Press Start 2P', cursive;
+    z-index: 10;
+    font-size: 35px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
 }
 
 
-
 /*make responsive*/
-/*change alert*/
