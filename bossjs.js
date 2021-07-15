@@ -1,4 +1,3 @@
-let hole = document.getElementById("hole");
 const bgTrack = new Audio("sound/crack3.mp3"); 
 const flapSound = new Audio("sound/sfx_wing.mp3");
 const scoreSound = new Audio("sound/energy3.wav"); 
@@ -6,6 +5,11 @@ const swooshSound = new Audio("sound/sfx_swooshing.mp3");
 const hitSound  = new Audio("sound/sfx_hit.mp3"); 
 const dieSound = new Audio("sound/unfect.ogg");
 const gamovrSound = new Audio("sound/laugh.wav")
+let hole = document.getElementById("hole");
+let pipe = document.getElementById("pipe");
+let bert = document.getElementById("bert");
+let jumping = 0;
+
 
 const resetStorage = () => {
     swooshSound.play();
@@ -23,18 +27,12 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         if ( typeof( Storage ) !== "undefined") {
             if ( localStorage.counter ) {
                 localStorage.counter = Number( localStorage.counter ) + 1;
-                document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
+                //document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
             } else {
                 localStorage.setItem("counter", 0);
             }
         }
     }
-
-
-    let pipe = document.getElementById("pipe");
-    let bert = document.getElementById("bert");
-    let jumping = 0;
-    
     
     document.onclick = function jump(){
         flapSound.play();
@@ -61,28 +59,29 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         hole.style.top = random  + "px";
         let score = document.querySelector(".score"); 
         counterUp();
-        score.innerHTML = "SCORE : " + `${localStorage.counter}`; //revise
-        //console.log(random)
+        score.innerHTML = "SCORE : " + `${localStorage.counter}`; 
         console.log(`${localStorage.counter}`);
     });
 
-    // Gravity 
+
     setInterval(function() {
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-
+        let gameEnd = false;
         if (jumping == 0) { // Gravity
             bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
         }
         let pipeLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
         let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-        let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
+        let cTop = -(800 - bertTop);
 
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
             hitSound.play();
             dieSound.play();
             gamovrSound.play();
-            const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
+            const startOver = confirm ("GET REKT " + localStorage.counter + " points. Do you want to GIT GUD ?");
+                
                 if ( startOver == true ) {
+                    gameEnd = true;
                     location.reload() ;
                 }
                 else {
@@ -93,32 +92,26 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             bert.style.top = 100 + "px";
         }
 
-        if(localStorage.counter == 30){
-            const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE")
+        const pauseAnimations = () => {
+            document.getElementById("floor").style.animationPlayState = "paused";
+            document.getElementById("hole").style.animationPlayState = "paused";
+            document.getElementById("pipe").style.animationPlayState = "paused";
         }
-        // callback onPageLoad reset()
-    }, 10);
 
+        if(localStorage.counter == 2){
+            pauseAnimations();
+            gameEnd = true;
+            const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE");
+           
+        }
+
+        if(gameEnd){
+            location.reload();
+        }
+    }, 10);
 
 })
 
-/*window.onload = function () {
-    startGame();
-}*/
-
-
-
-/*function onPageLoad () {
-    // Start of the page - static
-    // Keypress / click to start
-    // if lose -> alert
-    // game stops
-    // go back to beginning point  
-}*/
-
-
-// Create play again function when score < 10 level 1 , <25 level 2 , 30 (?) level 3
-// Put each score in array per level, add plus operator per round => result is Highscore localStorage  !
 
 
 	
