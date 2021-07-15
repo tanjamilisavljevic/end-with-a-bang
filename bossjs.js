@@ -1,6 +1,9 @@
 let hole = document.getElementById("hole");
-let flapSound = new Audio();
+const flapSound = new Audio();
+const scoreSound = new Audio();
 flapSound.src ="sound/sfx_wing.mp3"
+scoreSound.src = "sound/sfx_point.mp3"
+
 
 const resetStorage = () => {
     localStorage.removeItem("counter");
@@ -57,6 +60,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
 
     // Spawn Pipes
     hole.addEventListener('animationiteration', () => {
+        scoreSound.play();
         let random = -((Math.random() * 317) + 383);
         hole.style.top = random  + "px";
         let score = document.querySelector(".score"); 
@@ -91,14 +95,8 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             bert.style.top = 100 + "px";
         }
 
-        if(localStorage.counter == 4){
+        if(localStorage.counter == 30){
             const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE")
-            if(localStorage.counter == 4){
-                document.location.href = "level3.html";
-            }
-            else {
-                document.location.href = "index.html";
-            }
         }
         // callback onPageLoad reset()
     }, 10);
