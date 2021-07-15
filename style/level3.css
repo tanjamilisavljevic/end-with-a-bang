@@ -126,6 +126,7 @@ html, body {
     max-width: 15vw;
     padding: 0.5em;
     align-self: flex-end;
+    margin-top: 1em;
 }
 
 h1 {
@@ -246,7 +247,6 @@ h1 {
     border-radius: 0;
     padding: 5px;
     visibility: hidden;
-
 }
 
 .bossLink:hover {
@@ -320,5 +320,86 @@ h1 {
 
 
 /*make responsive*/
-/*change cursor*/
-/*fix title logo*/
+@media only screen and (max-width: 1260px){
+    .buttonContainer {
+        margin-top: 10em;
+    }
+    .startButton {
+        max-width: 17vw;
+        font-size: 0.8em;
+        margin: 1em;
+    }
+    .homeLink {
+        max-height: 100px;
+        margin-top: 2.5vh;
+    }
+    .toHome {
+        font-size: 8px;
+    }
+    .bossLink {
+        max-height: 100px;
+        margin-top: 2.5vh;
+    }
+    .toBoss {
+        font-size: 8px;
+    }
+    .titleWrapper {
+        max-width: 10vw;
+        padding: 0.5em;
+        margin-top: 3em;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    .score-container-extra {
+        max-width: 10vw;
+        font-size: 0.6em;
+    }
+    .highscore {
+        max-width: 15vw;
+        font-size: 0.6em;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .buttonContainer {
+        margin-top: 10em;
+    }
+    .startButton {
+        max-width: 10vw;
+        font-size: 0.5em;
+        margin: 1em;
+    }
+    .homeLink {
+        max-height: 100px;
+        margin-top: 2.5vh;
+    }
+    .toHome {
+        font-size: 8px;
+    }
+    .bossLink {
+        max-height: 100px;
+        margin-top: 2.5vh;
+    }
+    .toBoss {
+        font-size: 8px;
+    }
+    .titleWrapper {
+        max-width: 10vw;
+        padding: 0.5em;
+        margin-top: 3em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .score-container-extra {
+        max-width: 8vw;
+        font-size: 0.4em;
+    }
+    .highscore {
+        max-width: 10vw;
+        font-size: 0.4em;
+    }
+}
+
+
+
