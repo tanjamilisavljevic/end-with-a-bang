@@ -110,11 +110,10 @@ html, body {
 .score-container-extra {
     display: flex;
     max-width: 200px;
-    border: solid black 5px;
     border-left: none;
-    color: black;
+    color: #FFEBE7;
+    background-color: #000;
     font-weight: bolder;
-    background-color: #ADADAD;;
     margin: 1em;
     margin-left: 0;
     padding: 1em;
@@ -122,18 +121,18 @@ html, body {
 }
 
 .wrapper {
-    min-height: calc(100vh - 55px);
+    min-height: calc(100vh - 100px);
 }
 
 .titleWrapper {
     background-color: #000;
     border-left: none;
-    max-width: 20vw;
+    max-width: 15vw;
+    padding: 0.5em;
 }
 h1 {
     font-family: 'Tourney', cursive;
     color: #FFEBE7;
-    padding: 0.3em;
 }
 
 .startButton {
@@ -145,13 +144,17 @@ h1 {
     margin: 2em;
 }
 
-/*#highscore{*/
-/*    background-color: blue;*/
-/*    border: solid black 5px;*/
-/*    max-width: 20vw;*/
-/*    font-family: 'Press Start 2P', cursive;*/
-/*    padding: 1em;*/
-/*}*/
+.highscore{
+    max-width: 300px;
+    border-left: none;
+    color: #FFEBE7;
+    background-color: #000;
+    font-weight: bolder;
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em;
+    font-family: 'Press Start 2P', cursive;
+}
 
 /*make bert svg on the right*/
 /*make responsive*/

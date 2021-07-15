@@ -8,6 +8,8 @@ const counterUp = () => {
         if (localStorage.counter) {
             localStorage.counter = Number(localStorage.counter) + 1;
             document.getElementById("highscore").innerHTML = `Highscore - ${localStorage.counter}`;
+            document.getElementById("highscore").classList.add('highscore');
+
         } else {
             localStorage.setItem("counter", 0);
         }
