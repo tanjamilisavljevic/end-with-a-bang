@@ -13,9 +13,8 @@ const counterUp = () => {
     if (typeof (Storage) !== "undefined") {
         if (localStorage.counter) {
             localStorage.counter = Number(localStorage.counter) + 1;
-            document.getElementById("highscore").innerHTML = `Highscore - ${localStorage.counter}`;
-            document.getElementById("highscore").classList.add('highscore');
-
+            // document.getElementById("highscore").innerHTML = `Highscore - ${localStorage.counter}`;
+            // document.getElementById("highscore").classList.add('highscore');
         } else {
             localStorage.setItem("counter", 0);
         }
@@ -31,7 +30,8 @@ const makePipesAppear = () => {
     counterUp();
     score.innerHTML = "Score - " + `${localStorage.counter}`
     if (localStorage.counter > 25) {
-        document.querySelector('.levelLink').style.visibility = 'visible'
+        document.querySelector('.bossLink').style.visibility = 'visible'
+        document.querySelector('.toBoss').style.visibility = 'visible'
     }
 };
 
@@ -96,7 +96,8 @@ const stopTheGame = () => {
 
 const startTheGame = () => {
     document.querySelector('.youLost').style.visibility = 'hidden'
-    document.querySelector('.levelLink').style.visibility = 'hidden';
+    document.querySelector('.bossLink').style.visibility = 'hidden'
+    document.querySelector('.toBoss').style.visibility = 'hidden'
     resumeAnimations();
 // Pipes appear randomly
     hole.addEventListener('animationiteration', makePipesAppear);
