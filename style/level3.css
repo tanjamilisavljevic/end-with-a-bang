@@ -235,6 +235,44 @@ h1 {
     border-color: #FFEBE7;
 }
 
+
+
+.bossLink {
+    max-height: 150px;
+    margin-top: 5vh;
+    border: solid 5px black;
+    border-radius: 0;
+    padding: 5px;
+    visibility: hidden;
+
+}
+.bossLink:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+.bossLink:active {
+    border-color: #FFEBE7;
+}
+.toBoss {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    text-decoration: none;
+    padding: 5px;
+    visibility: hidden;
+}
+
+.toBoss:hover {
+    color: #FFEBE7;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 @keyframes shake {
     0% {
         transform: translate(1px, 1px) rotate(0deg);
@@ -284,3 +322,5 @@ h1 {
 
 
 /*make responsive*/
+/*add 8bit for boss level*/
+/*change cursor*/
