@@ -1,4 +1,6 @@
 let hole = document.getElementById("hole");
+let flapSound = new Audio();
+flapSound.src ="sound/sfx_wing.mp3"
 
 const resetStorage = () => {
     localStorage.removeItem("counter");
@@ -36,6 +38,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
     
     
     document.onclick = function jump(){
+        flapSound.play();
         jumping = 1;
         let jumpCount = 0;
         let jumpInterval = setInterval(function(){
