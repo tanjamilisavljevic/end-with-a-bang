@@ -1,10 +1,16 @@
 let hole = document.getElementById("hole");
+const bgTrack = new Audio(); 
 const flapSound = new Audio();
 const scoreSound = new Audio(); 
 const swooshSound = new Audio();
+const hitSound  = new Audio(); 
+const dieSound = new Audio();
+bgTrack.src = "sound/crack3.mp3";
 flapSound.src ="sound/sfx_wing.mp3";
 scoreSound.src = "sound/sfx_point.mp3";
 swooshSound.src = "sound/sfx_swooshing.mp3";
+hitSound.src = "sound/sfx_hit.mp3";
+dieSound.src = "sound/sfx_die.mp3";
 
 const resetStorage = () => {
     swooshSound.play();
@@ -12,7 +18,7 @@ const resetStorage = () => {
 }
 
 document.querySelector(".btn-entergame").addEventListener("click", () =>{
-    resetStorage();
+    resetStorage(); 
     let enterScreen = document.querySelector(".entergame");
     enterScreen.style.opacity = "0.9";
     setTimeout(() =>{ enterScreen.style.opacity = "0.7";}, 200);
@@ -84,7 +90,8 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         let cTop = -(800 - bertTop); // OG top is a negative , here we convert this to same but positive
 
         if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
-            //alert("You suck mate. Only " + localStorage.counter + " points");
+            hitSound.play();
+            dieSound.play();
             const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
                 if ( startOver == true ) {
                     location.reload() ;
