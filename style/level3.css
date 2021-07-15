@@ -2,17 +2,11 @@
     padding: 0;
     margin: 0;
 }
+
 /* PAGE STYLING */
 body {
-    background-image: url("../img/bluesky.png");
+    background-color: #061072;
 
-}
-
-h1 {
-    font-family: 'Tourney', cursive;
-    -webkit-text-fill-color: #FFEBE7;
-    -webkit-text-stroke-width: 0.015em;
-    -webkit-text-stroke-color: black;
 }
 
 /* IN GAME ELEMENT STYLING */
@@ -26,12 +20,10 @@ h1 {
     /* Screen size game */
     width: 700px;
     height: 800px;
-    border: 1px solid pink;
     overflow: hidden; /*Pipe doesn't exceed game screen*/
-    background-color: #FFC0BE;
-    box-shadow: 0px 2px 30px 12px #FFEBE7;
+    background-color: #7F95D1;
     z-index: 2;
-    /*background-image: url("../img/blue.jpg");*/
+    border: 8px solid darkslategrey;
 }
 
 #pipe {
@@ -40,27 +32,28 @@ h1 {
     position: relative;
     left: 650px;
     animation: block 1.5s infinite linear;
+    animation-play-state: paused;
 }
-/*#sun{*/
-/*    position: relative;*/
-/*    animation: block 1.5s infinite linear;*/
-/*}*/
 
-@keyframes  block {
-    0% {left:800px;}
-    100% {left:-100px;}
+@keyframes block {
+    0% {
+        left: 800px;
+    }
+    100% {
+        left: -100px;
+    }
 }
 
 #hole {
     width: 50px;
     height: 150px;
-    background-color: #FFC0BE;
+    background-image: url("../img/spikes.png");
     position: relative;
     left: 650px;
     top: -500px;
     animation: block 1.5s infinite linear;
+    animation-play-state: paused;
 }
-
 
 #bert {
     width: 20px;
@@ -71,21 +64,26 @@ h1 {
 }
 
 #floor {
-    width: 700px;
-    height: 100px;
-    background-color: pink;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    height: 14%;
+    background-image: url("../img/grass.png");
+    animation: animate 150ms linear infinite;
+    animation-play-state: paused;
 }
+
 img {
     border-radius: 50%;
 }
-.stone{
+
+.stone {
     width: 50px;
     border-radius: 0;
 }
+
 /* Loop Floor */
 @keyframes animate {
     from {
@@ -95,6 +93,7 @@ img {
         background-position: -60px 0;
     }
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -108,57 +107,136 @@ html, body {
     overflow: hidden;
 }
 
-#floor {
-    width: 100%;
-    height: 14%;
-    position: absolute;
-    background-image: url("../img/grass.png");
-    /*background-size: 60px 60px 60px 60px;*/
-    animation: animate 150ms linear infinite;
-}
-
-.score-container-extra{
+.score-container-extra {
     display: flex;
-    max-width: 200px;
-    border: solid #7F95D1 1px;
+    max-width: 20vw;
     border-left: none;
-    color: black;
+    color: #FFEBE7;
+    background-color: #000;
     font-weight: bolder;
-    background-color: #FFEBE7;
     margin: 1em;
     margin-left: 0;
     padding: 1em;
     font-family: 'Press Start 2P', cursive;
 }
-.wrapper{
-    min-height: calc(100vh - 55px);
+
+.titleWrapper {
+    background-color: #000;
+    border-left: none;
+    max-width: 15vw;
+    padding: 0.5em;
 }
-.titleWrapper{
-    background-color: #FFEBE7;
-    border: solid #7F95D1 1px;
+h1 {
+    font-family: 'Tourney', cursive;
+    color: #FFEBE7;
+}
+.buttonContainer{
+    display: flex;
+    flex-flow: column;
+}
+
+.startButton {
+    background-color: #ADADAD;;
+    border: solid black 5px;
+    max-width: 30vw;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1em;
+    margin: 2em;
+    cursor: pointer;
+}
+.levelLink {
+    background-color: #ADADAD;
+    border: solid black 5px;
+    color: black;
     max-width: 20vw;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em;
+    margin: 2em;
+    visibility: hidden;
 }
-#game-title{
-    font-size: 1em;
-    margin-left: 2em;
+.levelLink:active{
+    color: #ADADAD;
+    background-color: black ;
+}
+.startButton:active{
+    color: #ADADAD;
+    background-color: black ;
+}
+
+.highscore{
+    max-width: 25vw;
+    border-left: none;
+    color: #FFEBE7;
+    background-color: #000;
+    font-weight: bolder;
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.backgroundContainer{
+    display: flex;
+    flex-flow: row;
     max-width: 100vw;
+    min-height: calc(100vh - 80px);
+}
+.firstSection{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    min-width: 100vw;
+}
+.homeLink{
+    max-height: 150px;
+    margin-top: 5vh;
+    border: solid 5px black;
+    border-radius: 0;
+    padding: 5px;
 }
 
-/*.goToNextLevel{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    background-color: black;*/
-/*    width: 60vw;*/
-/*    height: 40vh;*/
-/*    z-index: 5;*/
-/*    position: relative;*/
-/*    margin: 19em;*/
-/*}*/
+.toHome{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    text-decoration: none;
+    padding: 5px;
+}
+.toHome:hover{
+    color: white;
+    cursor: pointer;
+}
 
-/*.levelLink{*/
-/*    text-decoration: none;*/
-/*    font-size: 2em;*/
-/*    margin: 3.5em;*/
-/*    font-family: 'Press Start 2P', cursive;*/
-/*}*/
+.homepageLinkWrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.homeLink:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
 
+.homeLink:active {
+    border-color: #FFEBE7;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+/*make responsive*/
+/*change alert*/

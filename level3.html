@@ -18,19 +18,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="backgroundContainer">
+    <div class="wrapper">
+        <div class="firstSection">
+            <div class="score-container">
+                <div class="score"></div>
+                <div id="highscore"></div>
+            </div>
+            <div class="homepageLinkWrapper">
+                <a href="index.html"> <img class="homeLink" src="img/8bitbert.png" alt="Bert"></a>
+                <p class="toHome"> HOMEPAGE </p>
+            </div>
+        </div>
 
-<!--<div class="goToNextLevel">-->
-<!--    <a class="levelLink" href="bosslevel.html"> 🔥 <strong>ENDBOSS</strong> BERT BATTLE 🔥 </a>-->
-<!--</div>-->
-
-<div class="wrapper">
-    <div class="score-container">
-        <div class="score"></div>
-        <div id="highscore"></div>
-    </div>
-
-    <div class="startButtonContainer" id="enterScreen">
-        <button id="startButton" class="startButton">Play!</button>
+        <div class="buttonContainer">
+            <div class="startButtonContainer" id="enterScreen">
+                <button id="startButton" class="startButton">Play!</button>
+            </div>
+            <a class="levelLink" href="bosslevel.html"> 🔥 ENDBOSS BERT BATTLE 🔥 </a>
+        </div>
     </div>
 
     <div id="game">
@@ -44,7 +50,6 @@
 <div class="titleWrapper">
     <div id="game-title"><h1 class="animate"> FLAPPY BERT </h1></div>
 </div>
-
 
 <script src="script/level3.js"></script>
 </body>

@@ -8,6 +8,8 @@ const counterUp = () => {
         if (localStorage.counter) {
             localStorage.counter = Number(localStorage.counter) + 1;
             document.getElementById("highscore").innerHTML = `Highscore - ${localStorage.counter}`;
+            document.getElementById("highscore").classList.add('highscore');
+
         } else {
             localStorage.setItem("counter", 0);
         }
@@ -15,12 +17,15 @@ const counterUp = () => {
 };
 
 const makePipesAppear = () => {
-    let score = document.querySelector(".score-container");
+    let score = document.querySelector(".score");
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random + "px";
     score.classList.add('score-container-extra');
     counterUp();
     score.innerHTML = "Score - " + `${localStorage.counter}`
+    if (localStorage.counter > 25){
+        document.querySelector('.levelLink').style.visibility = 'visible'
+    }
 };
 
 const gravityCallback = () => {
@@ -38,6 +43,7 @@ const gravityCallback = () => {
         localStorage.removeItem('counter'); //reset score
         bert.style.top = 275 + "px"; // reset bert
         stopTheGame(); //stop the game
+        document.getElementById('startButton').innerText = 'Play again'
     }
 };
 
@@ -80,10 +86,12 @@ const stopTheGame = () => {
 };
 
 const startTheGame = () => {
+    document.querySelector('.levelLink').style.visibility = 'hidden';
     resumeAnimations();
 // Pipes appear randomly
     hole.addEventListener('animationiteration', makePipesAppear);
 // Gravity
+    clearInterval(gravity);
     gravity = setInterval(gravityCallback, 10);
 //Jumping
     document.addEventListener("click", jump);
@@ -91,3 +99,5 @@ const startTheGame = () => {
 };
 
 document.getElementById('startButton').addEventListener("click", startTheGame);
+
+//TODO: fix score
