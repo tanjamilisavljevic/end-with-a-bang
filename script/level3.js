@@ -2,6 +2,13 @@ const pipe = document.getElementById("pipe");
 const hole = document.getElementById("hole");
 const bert = document.getElementById("bert");
 let jumping = 0;
+const flapSound = new Audio('sound/sfx_wing.mp3');
+const scoreSound = new Audio('sound/sfx_point.mp3');
+const swooshSound = new Audio('sound/sfx_swooshing.mp3');
+const hitSound  = new Audio('sound/sfx_hit.mp3');
+const dieSound = new Audio('sound/sfx_die.mp3');
+
+
 
 const counterUp = () => {
     if (typeof (Storage) !== "undefined") {
@@ -17,6 +24,7 @@ const counterUp = () => {
 };
 
 const makePipesAppear = () => {
+    scoreSound.play();
     let score = document.querySelector(".score");
     let random = -((Math.random() * 317) + 383);
     hole.style.top = random + "px";
@@ -38,7 +46,8 @@ const gravityCallback = () => {
     let cTop = -(800 - bertTop);
 
     if ((bertTop > 640) || ((pipeLeft < 20) && (pipeLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 120)))) { //3 dif statements if all true = game over
-
+        hitSound.play();
+        dieSound.play();
         alert("You lose, bud. Score -  " + `${localStorage.counter}`);
         localStorage.removeItem('counter'); //reset score
         bert.style.top = 275 + "px"; // reset bert
@@ -48,6 +57,7 @@ const gravityCallback = () => {
 };
 
 const jump = () => {
+    flapSound.play();
     jumping = 1;
     let jumpCount = 0;
     let jumpInterval = setInterval(function () {
