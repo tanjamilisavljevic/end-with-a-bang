@@ -179,17 +179,17 @@ h1 {
     border-color: #FFEBE7;
 }
 
-.highscore {
-    max-width: 25vw;
-    border-left: none;
-    color: #FFEBE7;
-    background-color: #000;
-    font-weight: bolder;
-    margin: 1em;
-    margin-left: 0;
-    padding: 1em;
-    font-family: 'Press Start 2P', cursive;
-}
+/*.highscore {*/
+/*    max-width: 25vw;*/
+/*    border-left: none;*/
+/*    color: #FFEBE7;*/
+/*    background-color: #000;*/
+/*    font-weight: bolder;*/
+/*    margin: 1em;*/
+/*    margin-left: 0;*/
+/*    padding: 1em;*/
+/*    font-family: 'Press Start 2P', cursive;*/
+/*}*/
 
 .backgroundContainer {
     display: flex;
@@ -355,10 +355,10 @@ h1 {
         max-width: 10vw;
         font-size: 0.6em;
     }
-    .highscore {
-        max-width: 15vw;
-        font-size: 0.6em;
-    }
+    /*.highscore {*/
+    /*    max-width: 15vw;*/
+    /*    font-size: 0.6em;*/
+    /*}*/
 }
 @media only screen and (max-width: 1024px){
     .buttonContainer {
@@ -395,10 +395,11 @@ h1 {
         max-width: 8vw;
         font-size: 0.4em;
     }
-    .highscore {
-        max-width: 10vw;
-        font-size: 0.4em;
-    }
+    /*.highscore {*/
+    /*    max-width: 10vw;*/
+    /*    font-size: 0.4em;*/
+    /*}*/
+
 }
 
 
