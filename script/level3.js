@@ -23,6 +23,9 @@ const makePipesAppear = () => {
     score.classList.add('score-container-extra');
     counterUp();
     score.innerHTML = "Score - " + `${localStorage.counter}`
+    if (localStorage.counter > 25){
+        document.querySelector('.levelLink').style.visibility = 'visible'
+    }
 };
 
 const gravityCallback = () => {
@@ -83,6 +86,7 @@ const stopTheGame = () => {
 };
 
 const startTheGame = () => {
+    document.querySelector('.levelLink').style.visibility = 'hidden';
     resumeAnimations();
 // Pipes appear randomly
     hole.addEventListener('animationiteration', makePipesAppear);
