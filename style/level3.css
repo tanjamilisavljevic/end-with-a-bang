@@ -136,6 +136,7 @@ h1 {
 .buttonContainer {
     display: flex;
     flex-flow: column;
+    margin-top: 15em;
 }
 
 .startButton {
@@ -143,6 +144,7 @@ h1 {
     border: solid black 5px;
     max-width: 30vw;
     font-family: 'Press Start 2P', cursive;
+    font-size: 1.2em;
     padding: 1em;
     margin: 2em;
     cursor: pointer;
