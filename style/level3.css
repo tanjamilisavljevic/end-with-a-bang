@@ -239,7 +239,6 @@ h1 {
     border-color: #FFEBE7;
 }
 
-
 .bossLink {
     max-height: 150px;
     margin-top: 5vh;
@@ -370,18 +369,18 @@ h1 {
         margin: 1em;
     }
     .homeLink {
-        max-height: 100px;
+        max-height: 70px;
         margin-top: 2.5vh;
     }
     .toHome {
-        font-size: 8px;
+        font-size: 6px;
     }
     .bossLink {
-        max-height: 100px;
+        max-height: 70px;
         margin-top: 2.5vh;
     }
     .toBoss {
-        font-size: 8px;
+        font-size: 6px;
     }
     .titleWrapper {
         max-width: 10vw;
@@ -399,7 +398,45 @@ h1 {
     /*    max-width: 10vw;*/
     /*    font-size: 0.4em;*/
     /*}*/
+}
 
+@media only screen and (min-width: 900px) and (max-width: 1024px){
+    .homepageLinkWrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+    }
+    .homeLink {
+        max-height: 50px;
+        margin-top: 2.5vh;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .toHome {
+        font-size: 5px;
+        margin-right: 10px;
+    }
+    .bossLink {
+        max-height: 50px;
+        margin-top: 2.5vh;
+        margin-right: 10px;
+    }
+    .toBoss {
+        font-size: 5px;
+        margin-right: 10px;
+    }
+    .titleWrapper {
+        max-width: 10vw;
+        padding: 0.5em;
+        margin-top: 3em;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    .score-container-extra {
+        max-width: 8vw;
+        font-size: 0.3em;
+    }
 }
 
 
