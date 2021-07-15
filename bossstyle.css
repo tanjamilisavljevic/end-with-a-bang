@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 * {
   padding: 0;
@@ -13,14 +14,23 @@ body {
 
 h1 {
   text-align: center;
-  font-family: 'Tourney', cursive;
-  font-size: 6em;
-  -webkit-text-fill-color: #FFEBE7;
+  font-family: 'Creepster', cursive;
+  -webkit-text-fill-color: #c5361979;
   -webkit-text-stroke-width: 0.015em;
   -webkit-text-stroke-color: black;
   margin: 0;
 }
 
+#title {
+  position: top ;
+}
+
+#title {
+  font-family: 'Creepster', cursive;
+  font-size: 8em;
+  position: relative;
+  bottom: 100px;
+}
 /* IN GAME ELEMENT STYLING */
 .entergame {
   position: relative;

@@ -81,6 +81,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             const startOver = confirm ("GET REKT " + localStorage.counter + " points. Do you want to GIT GUD ?");
                 
                 if ( startOver == true ) {
+                    gameEnd = true;
                     location.reload() ;
                 }
                 else {
