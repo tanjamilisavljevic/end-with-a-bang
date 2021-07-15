@@ -29,7 +29,7 @@ const makePipesAppear = () => {
     score.classList.add('score-container-extra');
     counterUp();
     score.innerHTML = "Score - " + `${localStorage.counter}`
-    if (localStorage.counter > 25) {
+    if (localStorage.counter > 3) {
         document.querySelector('.bossLink').style.visibility = 'visible'
         document.querySelector('.toBoss').style.visibility = 'visible'
     }
