@@ -42,7 +42,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         }
     }
 
-
+    let hole = document.getElementById("hole");
     let pipe = document.getElementById("pipe");
     let bert = document.getElementById("bert");
     let jumping = 0;
@@ -104,8 +104,9 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             bert.style.top = 100 + "px";
         }
 
-        if(localStorage.counter == 30){
-            const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE")
+        if(localStorage.counter == 10){
+            const levelWin = confirm( "Congrats you finish the noob level")
+            document.location.href="game2.html"
         }
         // callback onPageLoad reset()
     }, 10);
