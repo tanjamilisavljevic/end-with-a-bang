@@ -1,11 +1,13 @@
 let hole = document.getElementById("hole");
 const flapSound = new Audio();
-const scoreSound = new Audio();
-flapSound.src ="sound/sfx_wing.mp3"
-scoreSound.src = "sound/sfx_point.mp3"
-
+const scoreSound = new Audio(); 
+const swooshSound = new Audio();
+flapSound.src ="sound/sfx_wing.mp3";
+scoreSound.src = "sound/sfx_point.mp3";
+swooshSound.src = "sound/sfx_swooshing.mp3";
 
 const resetStorage = () => {
+    swooshSound.play();
     localStorage.removeItem("counter");
 }
 
