@@ -81,7 +81,6 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             gamovrSound.play();
             const startOver = confirm ("GET REKT " + localStorage.counter + " points. Do you want to GIT GUD ?");
                 
-
                 if ( startOver == true ) {
                     location.reload() ;
                 }
@@ -99,7 +98,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             document.getElementById("pipe").style.animationPlayState = "paused";
         }
 
-        if(localStorage.counter == 30){
+        if(localStorage.counter == 2){
             pauseAnimations();
             gameEnd = true;
             const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE");
