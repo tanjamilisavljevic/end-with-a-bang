@@ -10,6 +10,7 @@ const hitSound  = new Audio("sound/sfx_hit.mp3");
 const dieSound = new Audio("sound/unfect.ogg");
 const gamovrSound = new Audio("sound/laugh.wav")
 
+
 const resetStorage = () => {
     swooshSound.play();
     localStorage.removeItem("counter");
@@ -66,7 +67,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
     // Gravity 
     setInterval(function() {
         let bertTop = parseInt(window.getComputedStyle(bert).getPropertyValue("top"));
-
+        let gameEnd = false;
         if (jumping == 0) { // Gravity
             bert.style.top = ( bertTop + 3 ) + "px"; // pushed bert 6 px down when not clicked => gravity
         }
@@ -78,7 +79,9 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             hitSound.play();
             dieSound.play();
             gamovrSound.play();
-            const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");
+            const startOver = confirm ("GET REKT " + localStorage.counter + " points. Do you want to GIT GUD ?");
+                
+
                 if ( startOver == true ) {
                     location.reload() ;
                 }
@@ -90,8 +93,21 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             bert.style.top = 100 + "px";
         }
 
-        if(localStorage.counter == 30){
-            const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE")
+        const pauseAnimations = () => {
+            document.getElementById("floor").style.animationPlayState = "paused";
+            document.getElementById("hole").style.animationPlayState = "paused";
+            document.getElementById("pipe").style.animationPlayState = "paused";
+        }
+
+        if(localStorage.counter == 2){
+            pauseAnimations();
+            gameEnd = true;
+            const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE");
+           
+        }
+
+        if(gameEnd){
+              location.reload();
         }
         // callback onPageLoad reset()
     }, 10);
