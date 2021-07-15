@@ -5,9 +5,8 @@ let jumping = 0;
 const flapSound = new Audio('sound/sfx_wing.mp3');
 const scoreSound = new Audio('sound/sfx_point.mp3');
 const swooshSound = new Audio('sound/sfx_swooshing.mp3');
-const hitSound  = new Audio('sound/sfx_hit.mp3');
+const hitSound = new Audio('sound/sfx_hit.mp3');
 const dieSound = new Audio('sound/sfx_die.mp3');
-
 
 
 const counterUp = () => {
@@ -31,7 +30,7 @@ const makePipesAppear = () => {
     score.classList.add('score-container-extra');
     counterUp();
     score.innerHTML = "Score - " + `${localStorage.counter}`
-    if (localStorage.counter > 25){
+    if (localStorage.counter > 25) {
         document.querySelector('.levelLink').style.visibility = 'visible'
     }
 };
@@ -48,7 +47,7 @@ const gravityCallback = () => {
     if ((bertTop > 640) || ((pipeLeft < 20) && (pipeLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 120)))) { //3 dif statements if all true = game over
         hitSound.play();
         dieSound.play();
-        alert("You lose, bud. Score -  " + `${localStorage.counter}`);
+        document.querySelector('.youLost').style.visibility = 'visible';
         localStorage.removeItem('counter'); //reset score
         bert.style.top = 275 + "px"; // reset bert
         stopTheGame(); //stop the game
@@ -92,10 +91,11 @@ const stopTheGame = () => {
     clearInterval(gravity);
     document.removeEventListener('click', jump);
     document.removeEventListener('keydown', jump);
-   pauseAnimations();
+    pauseAnimations();
 };
 
 const startTheGame = () => {
+    document.querySelector('.youLost').style.visibility = 'hidden'
     document.querySelector('.levelLink').style.visibility = 'hidden';
     resumeAnimations();
 // Pipes appear randomly
@@ -110,4 +110,4 @@ const startTheGame = () => {
 
 document.getElementById('startButton').addEventListener("click", startTheGame);
 
-//TODO: fix score
+//TODO: fix highscore
