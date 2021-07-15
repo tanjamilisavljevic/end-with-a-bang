@@ -4,6 +4,33 @@
 /*playGame = () => {*/
     let hole = document.querySelector(".hole");
 
+    const bgTrack = new Audio(); 
+    const flapSound = new Audio();
+    const scoreSound = new Audio(); 
+    const swooshSound = new Audio();
+    const hitSound  = new Audio(); 
+    const dieSound = new Audio();
+    bgTrack.src = "sound/crack3.mp3";
+    flapSound.src ="sound/sfx_wing.mp3";
+    scoreSound.src = "sound/sfx_point.mp3";
+    swooshSound.src = "sound/sfx_swooshing.mp3";
+    hitSound.src = "sound/sfx_hit.mp3";
+    dieSound.src = "sound/sfx_die.mp3";
+
+
+    countdownFunction = () => {
+        var timeleft = 5;
+        var timer = setInterval(() => {
+            if(timeleft <= 0){
+                clearInterval(timer);
+                document.querySelector(".countdown").innerHTML = "BEGIN ! 🏁";
+            } else {
+                document.querySelector(".countdown").innerHTML = timeleft + " seconds remaining";
+            }
+            timeleft -= 1;
+        }, 1000);
+    }; 
+
     const resetStorage = () => {
 
         localStorage.removeItem("counter");
@@ -30,7 +57,7 @@
     // click button and button disappears and game starts
     document.querySelector(".btn-entergame").addEventListener("click", () =>{
 
-
+            countdownFunction();
             resetStorage();
 
             let enterScreen = document.querySelector(".entergame");
@@ -45,7 +72,7 @@
             setTimeout(() =>{ enterScreen.style.opacity = "0";}, 800);
             setTimeout(() =>{ enterScreen.remove()}, 1000);
 
-            //  5 SECOND COUNTDOWN
+            /*///  5 SECOND COUNTDOWN
             const timeleft = 5;
             const timer = setInterval(function(){
                 if(timeleft <= 0){
@@ -57,7 +84,7 @@
                 }
             }, 500);
     
-            console.log(timer);
+            console.log(timer);*/
             
 
             // start game when pressing start
@@ -69,7 +96,7 @@
         
         // Makes Bert jump 
         document.onclick = jump = () => {
-
+            flapSound.play();
             jumping = 1;
             let jumpCount = 0;
             let jumpInterval = setInterval(() =>{
@@ -95,7 +122,7 @@
 
                 if ( localStorage.counter ) {
                     localStorage.counter = Number( localStorage.counter ) + 1;
-                    document.getElementById("highscore").innerHTML = "HIGHSCORE : " + localStorage.counter;
+                    document.getElementById("highscore").innerHTML = "HIGHSCORE : " + localStorage.counter + " 🏆";
                 } else {
                     localStorage.setItem("counter", 1);
                 }
@@ -104,6 +131,7 @@
 
         // PIPES
         hole.addEventListener('animationiteration', () => {
+            scoreSound.play();
             // random position of the pipes and hole
             let score = document.querySelector(".score"); 
             let random = -((Math.random() * 317) + 383);
@@ -131,7 +159,8 @@
 
             //Define spots you hit
             if(( bertTop > 640 )||(( pipeLeft < 20 ) && ( pipeLeft > -50 ) && (( cTop < holeTop )||( cTop > holeTop + 120 )))) {
-                
+                hitSound.play();
+                dieSound.play();
                 // what happens when you hit
                 // confirm text
                 const startOver = confirm ("You suck mate. Only " + localStorage.counter + " points. Do you want to try again?");

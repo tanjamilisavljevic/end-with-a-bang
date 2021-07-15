@@ -165,7 +165,7 @@ button:hover/*, .btn-playagain:hover*/{
     
 }
 
-#highscore, .score{
+#highscore, .score, .countdown{
     font-size: 2em;
     font-family: 'Tourney', cursive;
     -webkit-text-fill-color: rgb(252, 255, 53);
@@ -182,7 +182,8 @@ button:hover/*, .btn-playagain:hover*/{
     box-shadow: 4px 4px 4px rgb(255, 174, 0);
 }
 
-.animate, .countdown {
+.animate{
+    font-size: 3em;
     background-color: rgb(151, 0, 0);
     text-align: center;
     margin-top: 80px;
