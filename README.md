@@ -52,6 +52,8 @@ and set highscore of the class, this is a WIP. <br>
   
 - HTML : 
   - Audio tag for music player 
+  - og meta tags
+  - favicons
   <br>
     - As most browsers decided to cut Autoplay, it was hard finding out how to make the bg music work <br>
     the only way to make the music loop and autoplay, was to do this combined with the mute method. <br>
@@ -99,5 +101,18 @@ Because of the mathematical logic in the CSS and JS, hardcoded pixel sizes preve
 - setting up local storage, where to inspect it, it's purpose 
 - getComputedStyle grabs css of specified element. // getPropertyValue to specify elemet (bertTop in this project)
 - Creating simple games can be very complex
+
+## Sources and Software used in this project : 
+VSCODE
+PHPStorm
+Favicon
+8bit converter
+GitHub
+GitHubPages
+Ubuntu
+GitBash
+Ableton LS 9
+Windows 10 / Firefox (level 4)
+
 
     
