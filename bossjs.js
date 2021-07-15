@@ -1,16 +1,10 @@
 let hole = document.getElementById("hole");
-const bgTrack = new Audio(); 
-const flapSound = new Audio();
-const scoreSound = new Audio(); 
-const swooshSound = new Audio();
-const hitSound  = new Audio(); 
-const dieSound = new Audio();
-bgTrack.src = "sound/crack3.mp3";
-flapSound.src ="sound/sfx_wing.mp3";
-scoreSound.src = "sound/sfx_point.mp3";
-swooshSound.src = "sound/sfx_swooshing.mp3";
-hitSound.src = "sound/sfx_hit.mp3";
-dieSound.src = "sound/sfx_die.mp3";
+const bgTrack = new Audio("sound/crack3.mp3"); 
+const flapSound = new Audio("sound/sfx_wing.mp3");
+const scoreSound = new Audio("sound/sfx_point.mp3"); 
+const swooshSound = new Audio("sound/sfx_swooshing.mp3");
+const hitSound  = new Audio("sound/sfx_hit.mp3"); 
+const dieSound = new Audio("sound/sfx_die.mp3");
 
 const resetStorage = () => {
     swooshSound.play();
@@ -21,13 +15,6 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
     resetStorage(); 
     let enterScreen = document.querySelector(".entergame");
     enterScreen.style.opacity = "0.9";
-    setTimeout(() =>{ enterScreen.style.opacity = "0.7";}, 200);
-    setTimeout(() =>{ enterScreen.style.opacity = "0.6";}, 300);
-    setTimeout(() =>{ enterScreen.style.opacity = "0.5";}, 400);
-    setTimeout(() =>{ enterScreen.style.opacity = "0.4";}, 500);
-    setTimeout(() =>{ enterScreen.style.opacity = "0.2";}, 600);
-    setTimeout(() =>{ enterScreen.style.opacity = "0.1";}, 700);
-    setTimeout(() =>{ enterScreen.style.opacity = "0";}, 800);
     setTimeout(() =>{ enterScreen.remove()}, 1000);
 
     //create highscore library (inspect)
