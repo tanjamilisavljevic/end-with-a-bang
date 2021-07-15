@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
   padding: 0;
@@ -35,16 +36,16 @@ h1 {
 .entergame {
   position: relative;
   top: 300px;
-  left: 350px;
+  left: 850px;
   z-index: 99;
 }
 .btn-entergame {
+  font-family: 'Press Start 2P', cursive;
   background-color: transparent;
   font-size: 1rem;
   background: rgba(112, 128, 144, 0.404);
   color: purple;
   box-sizing: border-box;
-  font-family: 'VT323', monospace ;
 }
 #game {
   /* Center */
