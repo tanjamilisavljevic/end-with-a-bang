@@ -107,6 +107,21 @@ Because of the mathematical logic in the CSS and JS, hardcoded pixel sizes preve
 
 # A word from the creators : 
 ## Glenn - Level 1 
+Underwater theme
+
+For the first level we go underwater, because underwater your movements are way slower.
+so that makes it perfect for level 1
+
+pipes in level 1 are little bit smaller to make it easier
+Bert is moving way slower to...
+When not passing this level you get a alert to go do somethings else
+
+adjustments to Bert in my Level...
+  * red eyes
+  * make smile smaller
+  * teeth smaller
+  * deleted red tie-bow
+  * deleted background
 
 ## Jonathan - Level 2 
 Theme Fire Dragon
