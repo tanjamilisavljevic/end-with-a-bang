@@ -1,8 +1,10 @@
 # end-with-a-bang
-## PLAY FOR FREE HERE : -> Add link GitPages
-
+## PLAY FOR FREE HERE : https://tanjamilisavljevic.github.io/end-with-a-bang/
 ## UI Screenshot 
-![Screenshot] -> Add tomorrow after pushing
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotIndex.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel2.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlvl3.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel4.png)<br>
 
 ## Our mission : 
 Apply our freshly learned HTML , JS, CSS & HTML skills to create a fun groupproject.<br>
@@ -101,6 +103,37 @@ Because of the mathematical logic in the CSS and JS, hardcoded pixel sizes preve
 - setting up local storage, where to inspect it, it's purpose 
 - getComputedStyle grabs css of specified element. // getPropertyValue to specify elemet (bertTop in this project)
 - Creating simple games can be very complex
+
+# A word from the creators : 
+## Glenn - Level 1 
+
+## Jonathan - Level 2 
+Theme Fire Dragon
+
+Bert is being chased by the fire dragon and the only way he can save the world is by finishing this cruel fire level by avoiding the firepipes that are coming at him at high speed !
+Will he be able to save the world? Well it's in your hands ! It's up to you to save the world!
+Do you have the courage, are you brave enough to accept this challenge?
+Press the button and save the world !
+Some special features:
+- The play button that starts the game and slowly fades away.
+- A countdown section which counts down from 3 to 1
+- A score section which keeps you posted about the score
+- When you hit something you will get a confirm box, when pressing OK you will start over and cancel to go back to the homepage
+- When you finish the level you will also get a confirm box congratulating you for passing this level. When you press OK it will go to the next level (level3) and cancel to go back to the homepage.
+- Moving lava (be careful not to burn yourself!)
+
+## Tanja - Index & Level 3 
+Level 3 is MS-DOS inspired. I used HTML, CSS and JavaScript and built this level in PhpStorm. <br>
+I used CSS animations, flexbox, grid and the level is responsive up to a point. Mobile responsiveness is still a work-in-progress. : - )<br> As far as JavaScript goes, all the functionalities have been extracted into functions. More refactoring coming soon! : - ) Thank you, Dennis, for sharing your JavaScript code and the super cool sound effects! Thanks, Jonathan, for the amazing teamwork and the invaluable insight!
+
+## Dennis - Level 4
+The last level is the final and therefore the " hardest " level. The main difficulty is scoring the required 30 points, gravity and hole are set on novice. <br>
+The theme is NES evil, with some Castlevania vibes . Only real ones wil recognize ! <br>
+During this project i mainly focussed on the logic and Javascript, as i wanted to start with the most difficult part of the game. <br>
+There is still a lot of optimisation and refactoring possibilities, these are added as WIP. DUe deadlines and task managemenet we've focussed on the <br>
+main functionalities, and making work on all the levels. This so we can present a consistent project, with appealing mechanics. <br>
+Idealy the player wants to try again, instead of playing once and telling 'cool game bro !'. Responsivness is a big struggle , as this game is <br>
+created Desktop first. We could have used Bootstrap to tackle this, we'll try this next time to save time. Flappy Bert Mobile version is coming up tho, so stay tuned ;) ! 
 
 ## Sources and Software used in this project : 
 VSCODE
