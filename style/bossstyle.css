@@ -8,7 +8,7 @@
 } 
 /* PAGE STYLING */
 body {
-  background-image: url(https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/bossbg.png);
+  background-image: url(/img/bossbg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -58,7 +58,7 @@ h3 {
 
 #game {
   /* Center */
-  background-image: url(https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/darkness.webp);
+  background-image: url(/img/darkness.webp);
   background-size: 700px 700px;
   background-repeat: no-repeat;
   position: absolute;
@@ -74,7 +74,7 @@ h3 {
 }
 
 #pipe {
-  background-image: url(https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/toxicpipe.webp);
+  background-image: url(/img/toxicpipe.webp);
   width: 50px;
   height: 800px;
   background-color: green;
@@ -89,7 +89,7 @@ h3 {
 }
 
 #hole {
-  background-image: url(https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/pipebg.jpg);
+  background-image: url(/img/pipebg.jpg);
   background-position: center;
   width: 50px;
   height: 180px;
@@ -147,7 +147,7 @@ html, body {
   width: 100%;
   height: 10%;
   position: absolute;
-  background-image: url(https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/bossground.png);
+  background-image: url(/img/bossground.png);
   /*background-size: 60px 60px 60px 60px;*/
   animation: animate 210ms linear infinite;
 }
