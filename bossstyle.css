@@ -143,6 +143,18 @@ html, body {
   animation: animate 210ms linear infinite;
 }
 
+@media only screen and (max-width: 768px) {
+  .youLost{
+      visibility: hidden;
+  }
+  .backgroundContainer{
+      visibility: hidden;
+  }
+  .responsivenessIsBroken {
+      display: block;
+  }
+}
+
 @media only screen and (max-width: 480px ) {
   body {
     background-image: url(img/bossbg.png);
@@ -257,5 +269,3 @@ html, body {
   }
 
 }
-  
-
