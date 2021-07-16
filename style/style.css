@@ -45,7 +45,7 @@ h1 {
     animation: 0.2s appearAnimation ease-in;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
-    margin-top: 2em;
+    margin-top: 3.5em;
 }
 
 .levelLink {
