@@ -22,6 +22,11 @@ h1 {
   margin: 0;
 }
 
+h3 {
+  font-family: 'Creepster', cursive;
+  font-size: 2rem;
+}
+
 #title {
   position: top ;
 }
@@ -33,20 +38,24 @@ h1 {
   bottom: 100px;
 }
 /* IN GAME ELEMENT STYLING */
-.entergame {
-  position: relative;
-  top: 300px;
-  left: 850px;
-  z-index: 99;
-}
 .btn-entergame {
+  position: relative;
+  top: 50%;
+  left:45%;
+  z-index: 99;
+  font-style: italic;
   font-family: 'Creepster', cursive;
   background-color: transparent;
   font-size: 1rem;
-  background: rgba(112, 128, 144, 0.404);
-  color: purple;
+  background: rgba(72, 146, 219, 0.404);
+  color: rgb(128, 0, 0);
   box-sizing: border-box;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  padding: 5px;
 }
+
 #game {
   /* Center */
   background-image: url(img/darkness.webp);
@@ -157,6 +166,7 @@ html, body {
     font-size: 7rem;
     text-align: center;
   }
+  
 }
 
 

@@ -20,7 +20,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
     resetStorage(); 
     let enterScreen = document.querySelector(".entergame");
     enterScreen.style.opacity = "0.9";
-    setTimeout(() =>{ enterScreen.remove()}, 1000);
+    setTimeout(() =>{ enterScreen.remove()}, 100);
 
     //create highscore library (inspect)
     const counterUp = () => {
