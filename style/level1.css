@@ -9,9 +9,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
-
 h1 {
     text-align: center;
     font-family: 'Tourney', cursive;
@@ -110,7 +107,7 @@ html, body {
 .score-container {
     font-size:xx-large;
     display: flex;
-    border: solid white 5px;
+   /* border: solid white 5px; */
     border-left: none;
     border-right: none;
     font-weight: bolder;

@@ -35,7 +35,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
         if ( typeof( Storage ) !== "undefined") {
             if ( localStorage.counter ) {
                 localStorage.counter = Number( localStorage.counter ) + 1;
-                document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
+               // document.getElementById("highscore").innerHTML = `Highscore ${localStorage.counter}`;
             } else {
                 localStorage.setItem("counter", 0);
             }
