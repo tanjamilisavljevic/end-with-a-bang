@@ -1,11 +1,10 @@
 # end-with-a-bang
-## PLAY FOR FREE HERE : -> Add link GitPages
-
+## PLAY FOR FREE HERE : https://tanjamilisavljevic.github.io/end-with-a-bang/
 ## UI Screenshot 
-![Screenshot] -> (https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotIndex.png)<br>
-![Screenshot] -> (https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel2.png)<br>
-![Screenshot] -> (https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlvl3.png)<br>
-![Screenshot] -> (https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel4.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotIndex.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel2.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlvl3.png)<br>
+![Screenshot](https://github.com/tanjamilisavljevic/end-with-a-bang/blob/main/img/screenshotlevel4.png)<br>
 
 ## Our mission : 
 Apply our freshly learned HTML , JS, CSS & HTML skills to create a fun groupproject.<br>
