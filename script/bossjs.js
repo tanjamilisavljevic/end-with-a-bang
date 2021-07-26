@@ -98,7 +98,7 @@ document.querySelector(".btn-entergame").addEventListener("click", () =>{
             document.getElementById("pipe").style.animationPlayState = "paused";
         }
 
-        if(localStorage.counter == 2){
+        if(localStorage.counter == 30){
             pauseAnimations();
             gameEnd = true;
             const levelWin = confirm( "BERT IS FREE NOW & RESTS IN ETERNAL GRATITUDE");

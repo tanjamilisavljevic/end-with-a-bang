@@ -30,7 +30,14 @@ h3 {
 #title {
   position: top ;
 }
-
+.score {
+  position: relative;
+  left: 10%;
+  font-family: 'Creepster', cursive;
+  color: rgba(255, 0, 0, 0.589);
+  font-size: 4rem;
+  justify-self: center;
+}
 #title {
   font-family: 'Creepster', cursive;
   font-size: 8em;
